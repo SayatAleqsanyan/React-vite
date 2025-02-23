@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { NavLink, useLocation } from 'react-router-dom'
 import DropMenu from "./DropMenu";
 import {privateRoutes, publicRoutes} from "../../utils/routes.jsx";

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {NavLink} from "react-router-dom";
 
 const DropMenu = ({menu, pathname}) => {
@@ -12,7 +12,7 @@ const DropMenu = ({menu, pathname}) => {
           <button
             className="font-bold text-2xl cursor-pointer text-black dark:text-white"
 
-            onClick={e => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen(!isOpen)}
             style={{
               padding: '0 20px',
               border: 'none',

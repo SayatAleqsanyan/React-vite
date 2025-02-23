@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Login = () => {
   function loginFn () {
     localStorage.setItem("Token", "kbkhbjknlnk")
