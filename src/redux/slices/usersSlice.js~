@@ -1,0 +1,71 @@
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+export const getProducts = createAsyncThunk(
+  'products/getProducts',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axios.get('http://localhost:4000/products');
+      return response.data; // Returns array of product objects
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const addProduct = createAsyncThunk(
+  'products/addProduct',
+  async (prodData, { rejectWithValue }) => {
+
+    try {
+      const response = await axios.post('http://localhost:4000/products', prodData);
+      return response.data; // Returns array of product objects
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+const productsSlice = createSlice({
+  name: 'products',
+  initialState: {
+    products: [],
+    selectedProduct: null,
+    error: null,
+    status: 'idle',
+  },
+  reducers: {
+    addNewProduct: (state, action) => {
+      state.products.push(action.payload);
+    }
+  },
+  extraReducers: (builder) => {
+    builder
+    .addCase(getProducts.pending, (state) => {
+      state.status = 'loading';
+    })
+    .addCase(getProducts.fulfilled, (state, action) => {
+      state.status = 'succeeded';
+      state.products = action.payload; // Save fetched products
+    })
+    .addCase(getProducts.rejected, (state, action) => {
+      state.status = 'failed';
+      state.error = action.payload;
+    })
+    .addCase(addProduct.pending, (state) => {
+      state.status = 'loading';
+    })
+    .addCase(addProduct.fulfilled, (state, action) => {
+      state.status = 'succeeded';
+      state.products = action.payload; // Save fetched products
+    })
+    .addCase(addProduct.rejected, (state, action) => {
+      state.status = 'failed';
+      state.error = action.payload;
+    })
+
+  },
+});
+
+export const { addNewProduct } = productsSlice.actions;
+export default productsSlice.reducer;

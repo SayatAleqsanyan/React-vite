@@ -19,7 +19,7 @@
     margin: 15px 0;
 }
 
-form{ width: 100%; }
+.form{ width: 100%; }
 
 .form-box{
     position: absolute;
@@ -89,6 +89,9 @@ form{ width: 100%; }
     font-weight: 600;
     transition: all .3s ease-in-out;
     background-color: #3f62ff;
+    &:disabled{
+        background-color: red;
+    }
 }
 
 .btn:hover{

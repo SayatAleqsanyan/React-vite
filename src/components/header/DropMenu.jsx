@@ -1,17 +1,16 @@
 import {useState} from 'react';
-import {NavLink} from "react-router-dom";
+import {NavLink, useLocation, useRoutes} from "react-router-dom";
+import {adminRoutes} from "../../utils/routes.jsx";
 
-const DropMenu = ({menu, pathname}) => {
+const DropMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [activeGroup, setActiveGroup] = useState(null)
-  const menuItemsGroups = ['cards', 'paginate']
+  const { pathname } = useLocation()
 
   return (
       <li>
         <div style={{ position: 'relative', display: 'inline-block' }}>
           <button
             className="font-bold text-2xl cursor-pointer text-black dark:text-white"
-
             onClick={() => setIsOpen(!isOpen)}
             style={{
               padding: '0 20px',
@@ -21,7 +20,7 @@ const DropMenu = ({menu, pathname}) => {
               gap: '8px',
             }}
           >
-            {isOpen ? 'Close Menu' : 'Open Menu'}
+            Admin
             <span
               style={{
                 transform: `rotate(${isOpen ? 180 : 0}deg)`,
@@ -37,9 +36,9 @@ const DropMenu = ({menu, pathname}) => {
             style={{
               position: 'absolute',
               top: '100%',
-              left: '0',
+              left: '0%',
               marginTop: '8px',
-              minWidth: '160px',
+              minWidth: '200px',
               boxShadow: '0 8px 16px rgba(0,0,0,0.2)',
               borderRadius: '4px',
               opacity: isOpen ? 1 : 0,
@@ -48,48 +47,12 @@ const DropMenu = ({menu, pathname}) => {
             }}
           >
             <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-              {menuItemsGroups.map(group => (
-                <li
-                  key={group}
-                  style={{
-                    position: 'relative',
-                    width: '100%',
-                    backgroundColor: activeGroup === group ? '#888' : 'transparent',
-                  }}
-                  onMouseEnter={() => setActiveGroup(group)}
-                  onMouseLeave={() => setActiveGroup(null)}
-                >
-                  <div
-                    style={{
-                      position: 'relative',
-                      padding: '12px 16px',
-                      cursor: 'pointer',
-                    }}
-                  >
-                    <div
-                      style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                      }}
-                    >
-                      <span style={{ textTransform: 'capitalize' }}>{group}</span>
-                      <span
-                        style={{
-                          transition: 'transform 0.3s',
-                          transform: `rotate(${activeGroup === group ? 180 : 0}deg)`,
-                        }}
-                      >
-                        ▼
-                      </span>
-                    </div>
-
-                    {activeGroup === group && (
+                    {(
                       <ul
-                        className="bg-white dark:bg-gray-900 text-black dark:text-white"
+                        className="bg-white dark:bg-gray-800 text-black dark:text-white"
                         style={{
                           position: 'absolute',
-                          left: '100%',
+                          left: '0%',
                           top: '-8px',
                           minWidth: '160px',
                           boxShadow: '0 8px 16px rgba(0,0,0,0.2)',
@@ -100,15 +63,16 @@ const DropMenu = ({menu, pathname}) => {
                           zIndex: 1000,
                         }}
                       >
-                        {menu
-                        .filter(page => page.type === group)
+                        {adminRoutes
                         .map(page => (
-                          <li key={page.path}>
+                          <li key={page.path} onClick={()=>{
+
+                          }}>
                             <NavLink
                               to={page.path}
                               className={`font-bold text-xl
-                                  ${pathname === page.path ? 'text-[#B91F47]' : 'text-black dark:text-white'}
-                                  ${pathname !== page.path && 'hover:text-blue-700'}`}
+                                  ${pathname === page.path ? 'text-green-500 ' : 'text-black dark:text-white'}
+                                  ${pathname !== page.path && 'hover:text-blue-500'}`}
                               style={{
                                 display: 'block',
                                 padding: '8px 16px',
@@ -121,9 +85,6 @@ const DropMenu = ({menu, pathname}) => {
                         ))}
                       </ul>
                     )}
-                  </div>
-                </li>
-              ))}
             </ul>
           </div>
         </div>

@@ -63,8 +63,8 @@ const Login = () => {
   }, [rememberMe, errors]);
 
   return (
-    <div className="form-box login " >
-      <form onSubmit={handleSubmit(logining)}  className="form">
+    <div className="form-box login">
+      <form onSubmit={handleSubmit(logining)}>
         <h1>Login</h1>
         <div className="input-box">
           <Input

@@ -37,6 +37,7 @@ const Header = () => {
             >
               {token}
             </span>
+
             <FaUserCircle
               onClick={() => {
                 localStorage.removeItem('Token')

@@ -1,0 +1,24 @@
+const AddNewProduct = () => {
+  const dispatch = useDispatch();
+
+  return (
+    <form>
+      <div className="input-box">
+        <input
+          name="Product name"
+          type="text"
+          placeholder="Product name"
+        />
+        <button>Add New Product</button>
+      </div>
+    </form>
+  );
+};
+
+export default AddNewProduct;
+
+
+
+
+
+

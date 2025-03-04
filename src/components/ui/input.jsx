@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Input = ({name, register, validation, error, ...props}) => {
-
   return (
     <div>
       <input
