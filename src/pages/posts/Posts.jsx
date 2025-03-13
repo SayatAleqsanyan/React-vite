@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PostsPagination from './PostsPagination';
 
 const Posts = () => {
   const [items, setItems] = useState([]);
@@ -71,50 +72,7 @@ const Posts = () => {
           ))}
         </div>
 
-        <div className="flex items-center justify-center space-x-4">
-          <button
-            onClick={handleFirst}
-            disabled={currentPage === 0}
-            className="px-4 py-2 border rounded disabled:opacity-50"
-          >
-            Սկիզբ
-          </button>
-
-          <button
-            onClick={handlePrevious}
-            disabled={currentPage === 0}
-            className="px-4 py-2 border rounded disabled:opacity-50"
-          >
-            Նախորդ
-          </button>
-
-          {getPageNumbers().map(pageNumber => (
-            <button
-              key={pageNumber}
-              onClick={() => handlePageClick(pageNumber)}
-              className={`px-3 py-1 border rounded min-w-[40px]
-              ${currentPage === pageNumber ? 'bg-blue-500 text-white' : 'hover:bg-gray-100'}`}
-            >
-              {pageNumber + 1}
-            </button>
-          ))}
-
-          <button
-            onClick={handleNext}
-            disabled={currentPage === pageCount - 1}
-            className="px-4 py-2 border rounded disabled:opacity-50"
-          >
-            Հաջորդ
-          </button>
-
-          <button
-            onClick={handleLast}
-            disabled={currentPage === pageCount - 1}
-            className="px-4 py-2 border rounded disabled:opacity-50"
-          >
-            Վերջ
-          </button>
-        </div>
+        <PostsPagination handleFirst={handleFirst} handlePrevious={handlePrevious} handlePageClick={handlePageClick} handleNext={handleNext} handleLast={handleLast} pageCount={pageCount} currentPage={currentPage} getPageNumbers={getPageNumbers}/>
       </div>
     </>
   );
