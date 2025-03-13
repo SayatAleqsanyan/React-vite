@@ -1,6 +1,8 @@
 import {Link} from "react-router-dom";
 
-const Product = ({product}) => {
+const Product = ({ product }) => {
+  const token = localStorage.getItem('Token')
+
   return (
     <div className="flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg my-6 w-96 dark:text-white dark:bg-gray-700">
       <div className="p-6 text-center">
@@ -13,9 +15,12 @@ const Product = ({product}) => {
         <p className="text-base text-slate-600 mt-4 font-light dark:text-white dark:bg-gray-700" >Price: ${product.price}</p>
         <p className="text-base text-slate-600 mt-4 font-light dark:text-white dark:bg-gray-700">{product.description}</p>
       </div>
-      <div className="flex justify-center mb-10">
+      {token === 'Admin' && <div className="flex justify-center mb-10">
+        <Link to={ product.id + "/edit"} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Edit </Link>
+      </div>}
+      {token !== 'Admin' && <div className="flex justify-center mb-10">
         <Link to={product.id} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Add </Link>
-      </div>
+        </div>}
     </div>
   );
 };
