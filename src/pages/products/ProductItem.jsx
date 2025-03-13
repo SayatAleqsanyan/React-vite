@@ -15,12 +15,13 @@ const ProductItem = ({ product }) => {
         <p className="text-base text-slate-600 mt-4 font-light dark:text-white dark:bg-gray-700" >Price: ${product.price}</p>
         <p className="text-base text-slate-600 mt-4 font-light dark:text-white dark:bg-gray-700">{product.description}</p>
       </div>
-      {token === 'Admin' && <div className="flex justify-center mb-10">
-        <Link to={ product.id + "/edit"} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Edit </Link>
-      </div>}
-      {token !== 'Admin' && <div className="flex justify-center mb-10">
-        <Link to={product.id} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Add </Link>
-        </div>}
+      <div className="flex justify-center mb-10 gap-10">
+        <Link to={ product.id } className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Add </Link>
+
+        {token === 'Admin' &&
+          <Link to={ product.id + "/edit"} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Edit </Link>
+        }
+      </div>
     </div>
   );
 };

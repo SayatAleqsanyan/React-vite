@@ -12,77 +12,77 @@
       "userName": "John Doe",
       "email": "zvjhZ@example.com",
       "password": "password123@",
-      "isBlocked": "false"
+      "isBlocked": false
     },
     {
       "id": "2",
       "userName": "asfdasfafdsa",
       "email": "afsdasda@dsa.ri",
       "password": "s111111#",
-      "isBlocked": true
+      "isBlocked": false
     },
     {
       "id": "3",
       "userName": "John Doe",
       "email": "DvB0Z@example.com",
       "password": "password123@",
-      "isBlocked": true
+      "isBlocked": false
     },
     {
       "id": "4",
       "userName": "kkasfdasfggafdsa",
       "email": "asdkasda@dsa.ri",
       "password": "11111111",
-      "isBlocked": true
+      "isBlocked": false
     },
     {
       "id": "5",
       "userName": "sdfasga",
       "email": "Cafsasdasda@dsa.ri",
       "password": "11111111",
-      "isBlocked": true
+      "isBlocked": false
     },
     {
       "id": "6",
       "userName": "JohnDevs",
       "email": "DvB0Z@example.com",
       "password": "password123",
-      "isBlocked": true
+      "isBlocked": false
     },
     {
       "id": "7",
       "userName": "kfdsfggafdsa",
       "email": "sdfasdkasda@dsa.ri",
       "password": "11111111",
-      "isBlocked": "false"
+      "isBlocked": false
     },
     {
       "id": "82a8",
       "userName": "user123",
       "email": "user1@mail.ru",
       "password": "user123@@",
-      "isBlocked": true
+      "isBlocked": false
     },
     {
       "id": "51b6",
       "userName": "user1234",
       "email": "user11@mail.ru",
       "password": "user123@@",
-      "isBlocked": true
+      "isBlocked": false
     },
     {
       "id": "9c47",
       "userName": "test1234",
       "email": "test1234@sss.gg",
       "password": "s1111111111#",
-      "isBlocked": true
+      "isBlocked": false
     },
     {
       "id": "4b6f",
       "userName": "user12d",
       "email": "Ml2fsfbA@example.com",
       "password": "s111111#",
-      "isBlocked": true
+      "isBlocked": false
     }
   ],
   "products": [
@@ -306,117 +306,94 @@
   "comments": [
     {
       "author": "asfdasfafdsa",
-      "text": "fsafdasfdasfag",
-      "data": "2025-03-12",
+      "text": "fdvd",
+      "date": "2025-03-13",
+      "postId": "2",
       "id": 1
     },
     {
       "author": "asfdasfafdsa",
-      "text": "sdfvbdsfbdsfb",
-      "date": "2025-03-12",
+      "text": "sdvsdv",
+      "date": "2025-03-13",
+      "postId": "3",
       "id": 2
     },
     {
       "author": "asfdasfafdsa",
-      "text": "sdvsdv",
-      "date": "2025-03-12",
+      "text": "fedbdfb",
+      "date": "2025-03-13",
+      "postId": "3",
       "id": 3
     },
     {
-      "author": "asfdasfafdsa",
-      "text": "asdvasdv",
-      "date": "2025-03-12",
+      "author": "Admin",
+      "text": "dfb",
+      "date": "2025-03-13",
+      "postId": "3",
       "id": 4
     },
     {
-      "author": "asfdasfafdsa",
-      "text": "cvdsasdavc",
-      "date": "2025-03-12",
+      "author": "Admin",
+      "text": "bvbefs",
+      "date": "2025-03-13",
+      "postId": "3",
       "id": 5
     },
     {
-      "author": "asfdasfafdsa",
-      "text": "hfngfnh\n\n\n\n\nasdvcasvc\n",
-      "date": "2025-03-12",
+      "author": "Admin",
+      "text": "dfvscvsd",
+      "date": "2025-03-13",
+      "postId": "2",
       "id": 6
     },
     {
-      "author": "asfdasfafdsa",
-      "text": "wvcev",
-      "date": "2025-03-12",
+      "author": "Admin",
+      "text": "dvs",
+      "date": "2025-03-13",
+      "postId": "2",
       "id": 7
     },
     {
-      "author": "asfdasfafdsa",
-      "text": "wdvcwdsvv",
-      "date": "2025-03-12",
+      "author": "Admin",
+      "text": "edfgbfd",
+      "date": "2025-03-13",
+      "postId": "1",
       "id": 8
     },
     {
-      "author": "asfdasfafdsa",
-      "text": "գագագ",
-      "date": "2025-03-12",
+      "author": "Admin",
+      "text": "fghsdfhsdfhs",
+      "date": "2025-03-13",
+      "postId": "8",
       "id": 9
     },
     {
-      "author": "asfdasfafdsa",
-      "text": "աֆֆդս",
-      "date": "2025-03-12",
+      "author": "Admin",
+      "text": "gsdfgsdhfsh",
+      "date": "2025-03-13",
+      "postId": "8",
       "id": 10
     },
     {
-      "author": "asfdasfafdsa",
-      "text": "ցղնվցղն",
-      "date": "2025-03-12",
+      "author": "Admin",
+      "text": "d",
+      "date": "2025-03-13",
+      "postId": "8",
       "id": 11
     },
     {
-      "author": "asfdasfafdsa",
-      "text": "եռֆհդբգֆդբ",
-      "date": "2025-03-12",
+      "author": "Admin",
+      "text": "resize-none w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-wresize-none w-full px-3 py-2 text-gray-700 border rounded-l",
+      "date": "2025-03-13",
+      "postId": "8",
       "id": 12
     },
     {
-      "author": "asfdasfafdsa",
-      "text": "սդվսդ",
-      "date": "2025-03-12",
+      "author": "Admin",
+      "text": "resize-none w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-wresize-none w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-wresize-none w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-wresize-none w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-no",
+      "date": "2025-03-13",
+      "postId": "8",
       "id": 13
-    },
-    {
-      "author": "asfdasfafdsa",
-      "text": "ցդս",
-      "date": "2025-03-12",
-      "id": 14
-    },
-    {
-      "author": "asfdasfafdsa",
-      "text": "sdvsdv",
-      "date": "2025-03-12",
-      "id": 15
-    },
-    {
-      "author": "asfdasfafdsa",
-      "text": "sfdvsfdv",
-      "date": "2025-03-12",
-      "id": 16
-    },
-    {
-      "author": "asfdasfafdsa",
-      "text": "asdcascascasc",
-      "date": "2025-03-12",
-      "id": 17
-    },
-    {
-      "author": "asfdasfafdsa",
-      "text": "gbsdgfsd",
-      "date": "2025-03-12",
-      "id": 18
-    },
-    {
-      "author": "asfdasfafdsa",
-      "text": "fgsdfgsdgfs",
-      "date": "2025-03-12",
-      "id": 19
     }
   ]
 }

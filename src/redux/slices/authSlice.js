@@ -44,6 +44,25 @@ export const loginUser = createAsyncThunk(
   }
 );
 
+
+export const profilUser = createAsyncThunk(
+  'auth/profilUser',
+  async (profilData, { dispatch, rejectWithValue }) => {
+    try {
+      const users = await dispatch(getUsers()).unwrap();
+      const { userName } = profilData;
+      const foundUser = users.find((user) => user.userName === userName);
+      if (foundUser) {
+        return foundUser;
+      } else {
+        return rejectWithValue('User is not defined');
+      }
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: 'auth',
   initialState: {

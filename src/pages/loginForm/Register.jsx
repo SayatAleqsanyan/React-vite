@@ -18,6 +18,17 @@ const Register = () => {
       email,
       password,
       isBlocked: false,
+      skills: [],
+      autobiography: null,
+      dateOfBirth: null,
+      firstName: null,
+      lastName: null,
+      gender: null,
+      address: null,
+      mobile: null,
+      company: null,
+      profession: null,
+      imgURL: null
     };
 
     dispatch(registerUser(user))

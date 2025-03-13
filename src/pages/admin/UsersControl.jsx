@@ -67,10 +67,10 @@ const UsersList = () => {
             <td className='py-2 px-4 border-b'>{user.email}</td>
             <td className='py-2 px-4 border-b'>{user.password}</td>
             {user.userName !== 'Admin' && (
-              <td className='py-2 px-4 border-b'>
+              <td className='py-2 px-4 border-b min-w-[130px]'>
                 <button
                   className={
-                    !user.isBlocked
+                    user.isBlocked
                       ? 'text-green-600 hover:text-green-800'
                       : 'text-red-600 hover:text-red-800 w-[75px]'
                   }
@@ -79,7 +79,7 @@ const UsersList = () => {
                     handleBlockUser(user)
                   }}
                 >
-                  {user.isBlocked ? 'Blocking' : 'Unblocking'}
+                  {!user.isBlocked ? 'Blocking' : 'Unblocking'}
                 </button>
               </td>
             )}

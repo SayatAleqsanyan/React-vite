@@ -12,7 +12,7 @@ input {
 }
 
 button{
-    border: 1px solid #ccc;
+    transition: 0.2s;
     border-radius: 4px;
     padding: 8px;
     &:hover{

@@ -11,6 +11,7 @@ import ProductEdit from "../pages/admin/ProductEdit.jsx";
 import ImagesPage from "../pages/images-page/ImagesPage.jsx";
 import Forum from "../pages/forum/Forum.jsx"
 import VideoPage from "../pages/videos/VideoPage.jsx";
+import UserPage from "../pages/userPage/UserPage.jsx";
 
 export const LOGINFORM_Page = "/loginForm";
 export const HOME_Page = "/";
@@ -23,6 +24,7 @@ export const PRODUCT_EDIT_PAGE = "/products/:id/edit"
 export const IMAGES_PAGE = "/images"
 export const FORUM_PAGE = "/forum"
 export const VIDEO_PAGE = "/video"
+export const PROFILE_PAGE = "/profile/:user_name"
 
 export const publicRoutes = [
   {
@@ -82,6 +84,12 @@ export const privateRoutes = [
     path: PRODUCT_ITEM_Page,
     element: <ProductPage/>,
     name: "Product Item",
+    menu: false
+  },
+  {
+    path: PROFILE_PAGE,
+    element: <UserPage/>,
+    name: "Profile",
     menu: false
   },
   {
