@@ -1,9 +1,9 @@
-import { GoMoveToTop } from "react-icons/go";
-import { GiShoppingCart } from "react-icons/gi";
+import { ShoppingCart, ArrowUpFromLine } from "lucide-react"
 import {useEffect, useState} from "react";
-import Shop from "../shop/Shop.jsx";
+import Shop from "../../../shop/Shop.jsx";
+import Styles from "../Sidebar.module.scss";
 
-const UiMenu = () => {
+const UiMenu = ({ isCollapsed }) => {
   const [modalActive, setModalActive] = useState(false);
   const [backToTop, setBackToTop] = useState(false);
   useEffect( ()=> {
@@ -24,16 +24,24 @@ const UiMenu = () => {
   }
 
   return (
-    <div className='fixed bottom-0 right-2'>
+    <div>
       <Shop modalActive={modalActive} setModalActive={setModalActive} />
-      {backToTop && <GoMoveToTop
-        onClick={scrollToTop}
-        className="mx-10 size-[55px] text-black dark:text-white hover:text-green-500 dark:hover:text-green-500 cursor-pointer"
-      />}
-      <GiShoppingCart
+
+      <div
         onClick={() => setModalActive(!modalActive)}
-        className="mx-10 size-[55px] text-black dark:text-white hover:text-green-500 dark:hover:text-green-500 cursor-pointer mb-10"
-      />
+        className={`border-l-4 border-l-transparent ${Styles.menuItem}`}
+      >
+        <ShoppingCart />
+        <span className={isCollapsed ? '' : Styles.hidden}> Shop </span>
+      </div>
+
+      {backToTop && <div
+        onClick={scrollToTop}
+        className={`border-l-4 border-l-transparent ${Styles.menuItem}`}
+      >
+        <ArrowUpFromLine />
+        <span className={isCollapsed ? '' : Styles.hidden}> To Top </span>
+      </div>}
     </div>
   );
 };

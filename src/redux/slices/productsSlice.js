@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Async Thunk for fetching products
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async (_, { rejectWithValue }) => {
@@ -14,7 +13,6 @@ export const fetchProducts = createAsyncThunk(
   }
 );
 
-// Async Thunk for adding a product
 export const createProduct = createAsyncThunk(
   'products/createProduct',
   async (productData, { rejectWithValue }) => {
@@ -27,7 +25,6 @@ export const createProduct = createAsyncThunk(
   }
 );
 
-// Async Thunk for deleting a product
 export const removeProduct = createAsyncThunk(
   'products/removeProduct',
   async (id, { rejectWithValue }) => {
@@ -50,7 +47,6 @@ const productsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-    // Fetch Products
     .addCase(fetchProducts.pending, (state) => {
       state.status = 'loading';
     })
@@ -63,13 +59,11 @@ const productsSlice = createSlice({
       state.error = action.payload;
     })
 
-    // Create Product
     .addCase(createProduct.fulfilled, (state, action) => {
       state.products.push(action.payload);
       state.status = 'succeeded';
     })
 
-    // Remove Product
     .addCase(removeProduct.fulfilled, (state, action) => {
       state.products = state.products.filter(product => product.id !== action.payload);
       state.status = 'succeeded';

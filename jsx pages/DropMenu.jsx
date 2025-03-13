@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {NavLink, useLocation, useRoutes} from "react-router-dom";
+import {NavLink, useLocation } from "react-router-dom";
 import {adminRoutes} from "../../utils/routes.jsx";
 
 const DropMenu = () => {
@@ -64,25 +64,23 @@ const DropMenu = () => {
                         }}
                       >
                         {adminRoutes
-                        .map(page => (
-                          <li key={page.path} onClick={()=>{
-
-                          }}>
-                            <NavLink
-                              to={page.path}
-                              className={`font-bold text-xl
+                        .map(page => page.type === 'admin' && <li key={page.path} onClick={()=>{
+                              }}>
+                                <NavLink
+                                  to={page.path}
+                                  className={`font-bold text-xl
                                   ${pathname === page.path ? 'text-green-500 ' : 'text-black dark:text-white'}
                                   ${pathname !== page.path && 'hover:text-blue-500'}`}
-                              style={{
-                                display: 'block',
-                                padding: '8px 16px',
-                                textDecoration: 'none',
-                              }}
-                            >
-                              {page.name}
-                            </NavLink>
-                          </li>
-                        ))}
+                                  style={{
+                                    display: 'block',
+                                    padding: '8px 16px',
+                                    textDecoration: 'none',
+                                  }}
+                                >
+                                  {page.name}
+                                </NavLink>
+                              </li>
+                        )}
                       </ul>
                     )}
             </ul>

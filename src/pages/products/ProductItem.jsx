@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 
-const Product = ({ product }) => {
+const ProductItem = ({ product }) => {
   const token = localStorage.getItem('Token')
 
   return (
@@ -25,4 +25,4 @@ const Product = ({ product }) => {
   );
 };
 
-export default Product;
+export default ProductItem;

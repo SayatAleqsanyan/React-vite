@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+.sidebar {
+  position: fixed;
+  right: 0;
+  top: 5rem;
+  transition: width 0.3s ease-in-out;
+  overflow: hidden;
+  width: 14rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+
+  &.collapsed {
+    width: 4rem;
+  }
+
+  .menu {
+    margin-top: 40px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style-type: none;
+    padding-left: 0;
+
+    .menuItem {
+      cursor: pointer;
+      padding: 1rem;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: all 0.3s ease-in-out;
+      text-decoration: none;
+      white-space: nowrap;
+
+      span {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      &:hover {
+        color: green;
+
+        > svg {
+          color: green;
+        }
+      }
+
+      > svg {
+        min-width: 1.5rem;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .toggle {
+    position: absolute;
+    right: 0.6rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.collapsed {
+  .menu {
+    .menuItem {
+      span {
+        opacity: 0;
+        width: 0;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+
+.dropDownProfile {
+  position: fixed;
+  top: calc(5rem + 60px);
+
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .menuContainer {
+    padding: 8px 0;
+  }
+
+  .menuList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menuItem {
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      border-bottom-color: green;
+    }
+  }
+}
+
+
+
+
+

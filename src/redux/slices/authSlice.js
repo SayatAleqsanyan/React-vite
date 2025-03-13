@@ -26,7 +26,6 @@ export const registerUser = createAsyncThunk(
   }
 );
 
-// Async thunk for logging in a user
 export const loginUser = createAsyncThunk(
   'auth/loginUser',
   async (loginData, { dispatch, rejectWithValue }) => {
@@ -71,7 +70,6 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-    // Handling login user actions
     .addCase(loginUser.pending, (state) => {
       state.loading = true;
       state.error = null;

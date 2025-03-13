@@ -1,13 +1,23 @@
 // server.js
-const jsonServer = require('json-server');
+// server.js-ի փոփոխված տարբերակը
+import jsonServer from 'json-server';
+import { createRequire } from 'module';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import fs from 'fs';
+
+const require = createRequire(import.meta.url);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults({
-  static: './public'  // Որտեղ public է ձեր ստատիկ ֆայլերի պանակը
+  static: './public'
 });
 const multer = require('multer');
 const path = require('path');
-const fs = require('fs');
+// const fs = require('fs');
 
 // Կարգավորել multer պահեստավորումը
 const storage = multer.diskStorage({

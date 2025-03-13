@@ -21,23 +21,18 @@ const About = () => {
     try {
       const uploadedImageUrls = [];
 
-      // Process each image one by one
       for (let i = 0; i < images.length; i++) {
         const image = images[i];
         const file = image.file;
 
-        // Create unique filename
         const timestamp = new Date().getTime();
         const randomStr = Math.random().toString(36).substring(2, 8);
         const fileName = `${timestamp}-${randomStr}-${file.name}`;
 
-        // Create FormData for this specific file
         const formData = new FormData();
         formData.append('file', file);
         formData.append('fileName', fileName);
 
-        // Send file to your custom endpoint that handles saving to public folder
-        // Note: You'll need to implement this endpoint
         const response = await axios.post('http://localhost:4001/upload', formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
@@ -52,7 +47,6 @@ const About = () => {
         }
       }
 
-      // Also save metadata to db.json if needed
       await axios.post('http://localhost:4001/images', {
         id: new Date().getTime(),
         files: uploadedImageUrls,

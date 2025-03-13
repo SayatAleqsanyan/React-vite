@@ -30,7 +30,6 @@ const ProductControl = () => {
   const handleAddProduct = (event) => {
     event.preventDefault();
 
-    // Validate inputs
     if (!productName || !price || !description || !imageUrl) {
       notify("Please fill in all fields", "red");
       return;
@@ -41,12 +40,12 @@ const ProductControl = () => {
       price: parseFloat(price),
       description: description,
       image: imageUrl,
+      users: [],
     };
 
     dispatch(createProduct(newProduct))
     .unwrap()
     .then(() => {
-      // Reset form fields
       setProductName("");
       setPrice("");
       setDescription("");
@@ -65,7 +64,7 @@ const ProductControl = () => {
     <div className='min-h-full w-full flex flex-col justify-center items-center'>
       <form
         onSubmit={handleAddProduct}
-        className="h-[500px] w-1/2 flex flex-col justify-center items-center gap-4 bg-blue-600 p-4 rounded-3xl mb-6"
+        className="h-[500px] my-10  w-1/2 flex flex-col justify-center items-center gap-4 bg-gray-300 p-4 rounded-3xl mb-6 dark:bg-gray-700 dark:text-white"
       >
         <input
           value={productName}
@@ -97,13 +96,13 @@ const ProductControl = () => {
         />
         <button
           type="submit"
-          className="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-100"
+          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800"
         >
           Add New Product
         </button>
       </form>
 
-      <table className='min-w-full bg-white border text-black border-gray-200 text-center'>
+      <table className='w-full border text-center bg-white dark:bg-gray-700 text-black dark:text-white border-gray-200 dark:border-gray-600 '>
         <thead>
         <tr>
           <th className='py-2 px-4 border-b'>No</th>
@@ -115,7 +114,7 @@ const ProductControl = () => {
         </thead>
         <tbody>
         {products.map((product, index) => (
-          <tr key={product.id} className='hover:bg-gray-100'>
+          <tr key={product.id} className='hover:bg-gray-200 dark:hover:bg-gray-600'>
             <td className='py-2 px-4 border-b'>{index + 1}</td>
             <td className='py-2 px-4 border-b'>{product.name}</td>
             <td className='py-2 px-4 border-b'>${product.price}</td>

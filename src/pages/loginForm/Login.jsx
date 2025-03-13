@@ -28,7 +28,7 @@ const Login = () => {
     if (savedUser) {
       setValue("email", savedUser.email);
       setValue("password", savedUser.password);
-      dispatch(setRememberMe(true)); // If savedUser exists, rememberMe should be true
+      dispatch(setRememberMe(true));
     }
   }, [setValue, dispatch]);
 
@@ -56,7 +56,6 @@ const Login = () => {
   };
 
   useEffect(() => {
-    // Enable login button automatically if the form is valid and rememberMe is true
     if (rememberMe && !errors.email && !errors.password) {
       document.querySelector(".btn").disabled = false;
     }

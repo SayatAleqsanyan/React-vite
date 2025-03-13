@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Async Thunk for fetching users
 export const fetchUsers = createAsyncThunk(
   'users/fetchUsers',
   async (_, { rejectWithValue }) => {
@@ -14,7 +13,6 @@ export const fetchUsers = createAsyncThunk(
   }
 );
 
-// Async Thunk for blocking/unblocking a user
 export const toggleUserBlock = createAsyncThunk(
   'users/toggleUserBlock',
   async ({ id, isBlocked }, { rejectWithValue }) => {
@@ -27,7 +25,6 @@ export const toggleUserBlock = createAsyncThunk(
   }
 );
 
-// Async Thunk for deleting a user
 export const deleteUser = createAsyncThunk(
   'users/deleteUser',
   async (id, { rejectWithValue }) => {
@@ -50,7 +47,6 @@ const usersSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-    // Fetch Users
     .addCase(fetchUsers.pending, (state) => {
       state.status = 'loading';
     })
@@ -63,7 +59,6 @@ const usersSlice = createSlice({
       state.error = action.payload;
     })
 
-    // Toggle User Block
     .addCase(toggleUserBlock.fulfilled, (state, action) => {
       const index = state.users.findIndex(user => user.id === action.payload.id);
       if (index !== -1) {
@@ -71,7 +66,6 @@ const usersSlice = createSlice({
       }
     })
 
-    // Delete User
     .addCase(deleteUser.fulfilled, (state, action) => {
       state.users = state.users.filter(user => user.id !== action.payload);
     });

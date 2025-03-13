@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers, toggleUserBlock, deleteUser } from '../../redux/slices/usersSlice';
 import { notify } from '../../utils/notify';
@@ -47,8 +47,8 @@ const UsersList = () => {
   if (status === 'failed') return <div>Error: {error}</div>;
 
   return (
-    <div className='flex justify-center p-10 '>
-      <table className='min-w-full bg-white border text-black border-gray-200 text-center'>
+    <div className='min-h-full w-full flex flex-col justify-center items-center py-10'>
+      <table className='mx-auto border text-center w-full bg-white  dark:bg-gray-700 text-black dark:text-white border-gray-200 dark:border-gray-600'>
         <thead>
         <tr>
           <th className='py-2 px-4 border-b'>No</th>
@@ -61,7 +61,7 @@ const UsersList = () => {
         </thead>
         <tbody>
         {users.map(user => (
-          <tr key={user.id} className='hover:bg-gray-100'>
+          <tr key={user.id} className='hover:bg-gray-200 dark:hover:bg-gray-600'>
             <td className='py-2 px-4 border-b'>{user.id}</td>
             <td className='py-2 px-4 border-b'>{user.userName}</td>
             <td className='py-2 px-4 border-b'>{user.email}</td>

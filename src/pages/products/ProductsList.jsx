@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../redux/slices/productsSlice';
-import Product from "./Product.jsx";
+import ProductItem from "./ProductItem.jsx";
 
 const ProductsList = () => {
   const dispatch = useDispatch();
@@ -23,11 +23,11 @@ const ProductsList = () => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold p-6 text-center">Products List</h1>
-      <ul className="flex flex-wrap justify-center p-10 gap-4 ">
+      <h1 className="text-3xl font-bold py-6 text-center">Products List</h1>
+      <ul className="flex flex-wrap justify-center py-10 gap-10">
         {products.map((product) => (
           <li key={product.id}>
-            <Product product={product} />
+            <ProductItem product={product} />
           </li>
         ))}
       </ul>

@@ -1,11 +1,14 @@
-import React from 'react';
+import style from "./ModalWindow.module.css";
 
-const Modalka = () => {
+const ModalWindow = ({ active, setActive, children }) => {
+
   return (
-    <div>
-      
+    <div className= {`${active ? `${style.active} ${style.modal}` : style.modal} dark:bg-black bg-white`} onClick={()=>setActive(false)}>
+      <div className={style.modal_content} onClick={e=>e.stopPropagation()}>
+        {children}
+      </div>
     </div>
   );
 };
 
-export default Modalka;
+export default ModalWindow;

@@ -1,11 +1,16 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+body * {
+    transition: all 0.2s ease-in-out;
+}
+
 input {
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 8px;
 }
+
 button{
     border: 1px solid #ccc;
     border-radius: 4px;
