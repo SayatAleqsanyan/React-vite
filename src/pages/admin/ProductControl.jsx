@@ -2,6 +2,7 @@ import  { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { notify } from "../../utils/notify.js";
 import { fetchProducts, createProduct, removeProduct } from "../../redux/slices/productsSlice.js";
+import {Link} from "react-router-dom";
 
 const ProductControl = () => {
   const [productName, setProductName] = useState("");
@@ -41,6 +42,9 @@ const ProductControl = () => {
       description: description,
       image: imageUrl,
       users: [],
+      like: [],
+      dislike: [],
+      favorites: []
     };
 
     dispatch(createProduct(newProduct))
@@ -120,8 +124,9 @@ const ProductControl = () => {
             <td className='py-2 px-4 border-b'>${product.price}</td>
             <td className='py-2 px-4 border-b'>{product.description}</td>
             <td className='py-2 px-4 border-b'>
+              <Link to={`/products/${product.id}/edit`} className="text-center text-yellow-600 hover:text-yellow-800 w-[75px]"> Edit </Link>
               <button
-                className='text-red-600 hover:text-red-800 w-[75px]'
+                className='text-red-600 hover:text-red-800 w-[75px] text-center'
                 onClick={() => handleDeleteProduct(product)}
               >
                 Delete

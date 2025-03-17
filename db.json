@@ -4,85 +4,217 @@
       "id": "0",
       "userName": "Admin",
       "email": "Ml2bA@example.com",
+      "mobile": null,
       "password": "ssss5555#",
-      "isBlocked": "false"
+      "isBlocked": false,
+      "firstName": null,
+      "lastName": null,
+      "dateOfBirth": null,
+      "gender": null,
+      "address": null,
+      "company": null,
+      "profession": null,
+      "autobiography": null,
+      "skills": [],
+      "imgURL": null
     },
     {
       "id": "1",
       "userName": "John Doe",
-      "email": "zvjhZ@example.com",
-      "password": "password123@",
-      "isBlocked": false
+      "email": "zvjhZ@mple.com",
+      "mobile": null,
+      "password": "s111111#",
+      "isBlocked": false,
+      "firstName": null,
+      "lastName": null,
+      "dateOfBirth": null,
+      "gender": null,
+      "address": null,
+      "company": null,
+      "profession": null,
+      "autobiography": null,
+      "skills": [],
+      "imgURL": null
     },
     {
       "id": "2",
       "userName": "asfdasfafdsa",
       "email": "afsdasda@dsa.ri",
+      "mobile": null,
       "password": "s111111#",
-      "isBlocked": false
+      "isBlocked": false,
+      "firstName": null,
+      "lastName": null,
+      "dateOfBirth": null,
+      "gender": null,
+      "address": null,
+      "company": null,
+      "profession": null,
+      "autobiography": null,
+      "skills": [],
+      "imgURL": null
     },
     {
       "id": "3",
       "userName": "John Doe",
-      "email": "DvB0Z@example.com",
-      "password": "password123@",
-      "isBlocked": false
+      "email": "DvB0Z@exple.com",
+      "mobile": null,
+      "password": "s111111#",
+      "isBlocked": false,
+      "firstName": null,
+      "lastName": null,
+      "dateOfBirth": null,
+      "gender": null,
+      "address": null,
+      "company": null,
+      "profession": null,
+      "autobiography": null,
+      "skills": [],
+      "imgURL": null
     },
     {
       "id": "4",
       "userName": "kkasfdasfggafdsa",
       "email": "asdkasda@dsa.ri",
-      "password": "11111111",
-      "isBlocked": false
+      "mobile": null,
+      "password": "s11111111#",
+      "isBlocked": false,
+      "firstName": null,
+      "lastName": null,
+      "dateOfBirth": null,
+      "gender": null,
+      "address": null,
+      "company": null,
+      "profession": null,
+      "autobiography": null,
+      "skills": [],
+      "imgURL": null
     },
     {
       "id": "5",
       "userName": "sdfasga",
       "email": "Cafsasdasda@dsa.ri",
-      "password": "11111111",
-      "isBlocked": false
+      "mobile": null,
+      "password": "s111111#",
+      "isBlocked": false,
+      "firstName": null,
+      "lastName": null,
+      "dateOfBirth": null,
+      "gender": null,
+      "address": null,
+      "company": null,
+      "profession": null,
+      "autobiography": null,
+      "skills": [],
+      "imgURL": null
     },
     {
       "id": "6",
       "userName": "JohnDevs",
-      "email": "DvB0Z@example.com",
-      "password": "password123",
-      "isBlocked": false
+      "email": "DvB0Z@exle.com",
+      "mobile": null,
+      "password": "s111111#",
+      "isBlocked": false,
+      "firstName": null,
+      "lastName": null,
+      "dateOfBirth": null,
+      "gender": null,
+      "address": null,
+      "company": null,
+      "profession": null,
+      "autobiography": null,
+      "skills": [],
+      "imgURL": null
     },
     {
       "id": "7",
       "userName": "kfdsfggafdsa",
       "email": "sdfasdkasda@dsa.ri",
-      "password": "11111111",
-      "isBlocked": false
+      "mobile": null,
+      "password": "s111111#",
+      "isBlocked": false,
+      "firstName": null,
+      "lastName": null,
+      "dateOfBirth": null,
+      "gender": null,
+      "address": null,
+      "company": null,
+      "profession": null,
+      "autobiography": null,
+      "skills": [],
+      "imgURL": null
     },
     {
       "id": "82a8",
       "userName": "user123",
       "email": "user1@mail.ru",
-      "password": "user123@@",
-      "isBlocked": false
+      "mobile": null,
+      "password": "s111111#",
+      "isBlocked": false,
+      "firstName": null,
+      "lastName": null,
+      "dateOfBirth": null,
+      "gender": null,
+      "address": null,
+      "company": null,
+      "profession": null,
+      "autobiography": null,
+      "skills": [],
+      "imgURL": null
     },
     {
       "id": "51b6",
       "userName": "user1234",
       "email": "user11@mail.ru",
-      "password": "user123@@",
-      "isBlocked": false
+      "mobile": null,
+      "password": "s111111#",
+      "isBlocked": false,
+      "firstName": null,
+      "lastName": null,
+      "dateOfBirth": null,
+      "gender": null,
+      "address": null,
+      "company": null,
+      "profession": null,
+      "autobiography": null,
+      "skills": [],
+      "imgURL": null
     },
     {
       "id": "9c47",
       "userName": "test1234",
       "email": "test1234@sss.gg",
-      "password": "s1111111111#",
-      "isBlocked": false
+      "mobile": null,
+      "password": "s111111#",
+      "isBlocked": false,
+      "firstName": null,
+      "lastName": null,
+      "dateOfBirth": null,
+      "gender": null,
+      "address": null,
+      "company": null,
+      "profession": null,
+      "autobiography": null,
+      "skills": [],
+      "imgURL": null
     },
     {
       "id": "4b6f",
       "userName": "user12d",
       "email": "Ml2fsfbA@example.com",
+      "mobile": null,
       "password": "s111111#",
-      "isBlocked": false
+      "isBlocked": false,
+      "firstName": null,
+      "lastName": null,
+      "dateOfBirth": null,
+      "gender": null,
+      "address": null,
+      "company": null,
+      "profession": null,
+      "autobiography": null,
+      "skills": [],
+      "imgURL": null
     }
   ],
   "products": [
@@ -92,7 +224,10 @@
       "description": "Description of Product 1",
       "image": "https://picsum.photos/id/11/1000/700.jpg",
       "id": "1",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [],
+      "favorites": []
     },
     {
       "name": "Product 2",
@@ -100,7 +235,17 @@
       "description": "Description of Product 2",
       "image": "https://picsum.photos/id/12/1000/700.jpg",
       "id": "2",
-      "users": []
+      "users": [],
+      "like": [
+        "Admin"
+      ],
+      "dislike": [
+        "asfdasfafdsa"
+      ],
+      "favorites": [
+        "asfdasfafdsa",
+        "Admin"
+      ]
     },
     {
       "name": "Product 3",
@@ -108,7 +253,14 @@
       "description": "Description of Product 3",
       "image": "https://picsum.photos/id/13/1000/700.jpg",
       "id": "3",
-      "users": []
+      "users": [],
+      "like": [
+        "Admin"
+      ],
+      "dislike": [],
+      "favorites": [
+        "Admin"
+      ]
     },
     {
       "id": "4",
@@ -116,7 +268,12 @@
       "price": "39.99",
       "description": "Description of Product 4",
       "image": "https://picsum.photos/id/14/1000/700.jpg",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [],
+      "favorites": [
+        "Admin"
+      ]
     },
     {
       "id": "5",
@@ -124,7 +281,14 @@
       "price": 29.99,
       "description": "Description of Product 5",
       "image": "https://picsum.photos/id/15/1000/700.jpg",
-      "users": []
+      "users": [],
+      "like": [
+        "Admin"
+      ],
+      "dislike": [],
+      "favorites": [
+        "Admin"
+      ]
     },
     {
       "name": "Product 6",
@@ -132,7 +296,10 @@
       "description": "Description of Product 6",
       "image": "https://picsum.photos/id/16/1000/700.jpg",
       "id": "6",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [],
+      "favorites": []
     },
     {
       "name": "Product 7",
@@ -140,7 +307,14 @@
       "description": "Description of Product 7",
       "image": "https://picsum.photos/id/17/1000/700.jpg",
       "id": "7",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [
+        "Admin"
+      ],
+      "favorites": [
+        "Admin"
+      ]
     },
     {
       "id": "8",
@@ -148,7 +322,10 @@
       "price": "39.99",
       "description": "Description of Product 8",
       "image": "https://picsum.photos/id/18/1000/700.jpg",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [],
+      "favorites": []
     },
     {
       "id": "9",
@@ -156,7 +333,12 @@
       "price": 10.99,
       "description": "Description of Product 9",
       "image": "https://picsum.photos/id/19/1000/700.jpg",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [],
+      "favorites": [
+        "Admin"
+      ]
     },
     {
       "name": "Product 10",
@@ -164,7 +346,10 @@
       "description": "Description of Product 10",
       "image": "https://picsum.photos/id/20/1000/700.jpg",
       "id": "10",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [],
+      "favorites": []
     },
     {
       "id": "11",
@@ -172,7 +357,10 @@
       "price": "29.9",
       "description": "Description of Product 11",
       "image": "https://picsum.photos/id/21/1000/700.jpg",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [],
+      "favorites": []
     },
     {
       "id": "12",
@@ -180,7 +368,10 @@
       "price": "39.99",
       "description": "Description of Product 12",
       "image": "https://picsum.photos/id/22/1000/700.jpg",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [],
+      "favorites": []
     },
     {
       "id": "13",
@@ -188,7 +379,10 @@
       "price": 10.99,
       "description": "Description of Product 13",
       "image": "https://picsum.photos/id/23/1000/700.jpg",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [],
+      "favorites": []
     },
     {
       "id": "14",
@@ -196,7 +390,10 @@
       "price": 10.99,
       "description": "Description of Product 14",
       "image": "https://picsum.photos/id/24/1000/700.jpg",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [],
+      "favorites": []
     },
     {
       "id": "15",
@@ -204,7 +401,10 @@
       "price": 19.99,
       "description": "Description of Product 15",
       "image": "https://picsum.photos/id/25/1000/700.jpg",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [],
+      "favorites": []
     },
     {
       "name": "Product 16",
@@ -212,7 +412,10 @@
       "description": "Description of Product 16",
       "image": "https://picsum.photos/id/26/1000/700.jpg",
       "id": "16",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [],
+      "favorites": []
     },
     {
       "id": "17",
@@ -220,7 +423,10 @@
       "price": "39.99",
       "description": "Description of Product 17",
       "image": "https://picsum.photos/id/27/1000/700.jpg",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [],
+      "favorites": []
     },
     {
       "id": "18",
@@ -228,7 +434,10 @@
       "price": "39.99",
       "description": "Description of Product 18",
       "image": "https://picsum.photos/id/28/1000/700.jpg",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [],
+      "favorites": []
     },
     {
       "name": "Product 19",
@@ -236,7 +445,10 @@
       "description": "Description of Product 19",
       "image": "https://picsum.photos/id/29/1000/700.jpg",
       "id": "781a",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [],
+      "favorites": []
     },
     {
       "id": "a4c6",
@@ -244,7 +456,10 @@
       "price": "59.99",
       "description": "Description of Product 20",
       "image": "https://picsum.photos/id/30/1000/700.jpg",
-      "users": []
+      "users": [],
+      "like": [],
+      "dislike": [],
+      "favorites": []
     }
   ],
   "cources": [
@@ -305,53 +520,11 @@
   ],
   "comments": [
     {
-      "author": "asfdasfafdsa",
-      "text": "fdvd",
-      "date": "2025-03-13",
-      "postId": "2",
-      "id": 1
-    },
-    {
-      "author": "asfdasfafdsa",
-      "text": "sdvsdv",
-      "date": "2025-03-13",
-      "postId": "3",
-      "id": 2
-    },
-    {
-      "author": "asfdasfafdsa",
-      "text": "fedbdfb",
-      "date": "2025-03-13",
-      "postId": "3",
-      "id": 3
-    },
-    {
       "author": "Admin",
       "text": "dfb",
       "date": "2025-03-13",
       "postId": "3",
       "id": 4
-    },
-    {
-      "author": "Admin",
-      "text": "bvbefs",
-      "date": "2025-03-13",
-      "postId": "3",
-      "id": 5
-    },
-    {
-      "author": "Admin",
-      "text": "dfvscvsd",
-      "date": "2025-03-13",
-      "postId": "2",
-      "id": 6
-    },
-    {
-      "author": "Admin",
-      "text": "dvs",
-      "date": "2025-03-13",
-      "postId": "2",
-      "id": 7
     },
     {
       "author": "Admin",
@@ -394,6 +567,227 @@
       "date": "2025-03-13",
       "postId": "8",
       "id": 13
+    },
+    {
+      "author": "Admin",
+      "text": "sdvsdv",
+      "date": "2025-03-16",
+      "postId": "1",
+      "id": 14
+    },
+    {
+      "author": "Admin",
+      "text": "sgfgsfgs",
+      "date": "2025-03-16",
+      "postId": "2",
+      "id": 16
+    },
+    {
+      "author": "Admin",
+      "text": "gsfgsfg",
+      "date": "2025-03-16",
+      "postId": "2",
+      "id": 17
+    },
+    {
+      "author": "Admin",
+      "text": "gsfdfgs",
+      "date": "2025-03-16",
+      "postId": "2",
+      "id": 18
+    },
+    {
+      "author": "Admin",
+      "text": "fgsgfs",
+      "date": "2025-03-16",
+      "postId": "2",
+      "id": 19
+    },
+    {
+      "author": "Admin",
+      "text": "tysfghs",
+      "date": "2025-03-16",
+      "postId": "2",
+      "id": 20
+    },
+    {
+      "author": "Admin",
+      "text": "aaa",
+      "date": "2025-03-16",
+      "postId": "2",
+      "id": 21
+    },
+    {
+      "author": "Admin",
+      "text": "sssss",
+      "date": "2025-03-16",
+      "postId": "2",
+      "id": 22
+    },
+    {
+      "author": "Admin",
+      "text": "dfsdfsdf",
+      "date": "2025-03-16",
+      "postId": "2",
+      "id": 23
+    },
+    {
+      "author": "Admin",
+      "text": "fgbdc",
+      "date": "2025-03-16",
+      "postId": "3",
+      "id": 24
+    },
+    {
+      "author": "Admin",
+      "text": "gfdsgfs",
+      "date": "2025-03-16",
+      "postId": "3",
+      "id": 25
+    },
+    {
+      "author": "Admin",
+      "text": "fgsfgs",
+      "date": "2025-03-16",
+      "postId": "3",
+      "id": 26
+    },
+    {
+      "author": "Admin",
+      "text": "gfsdgs",
+      "date": "2025-03-16",
+      "postId": "3",
+      "id": 27
+    },
+    {
+      "author": "Admin",
+      "text": "fgsdgfs",
+      "date": "2025-03-16",
+      "postId": "3",
+      "id": 28
+    },
+    {
+      "author": "Admin",
+      "text": "esfsdfs",
+      "date": "2025-03-16",
+      "postId": "3",
+      "id": 29
+    },
+    {
+      "author": "Admin",
+      "text": "1",
+      "date": "2025-03-17",
+      "postId": "2",
+      "id": 30
+    },
+    {
+      "author": "Admin",
+      "text": "gdsfgs",
+      "date": "2025-03-17",
+      "postId": "3",
+      "id": 31
+    },
+    {
+      "author": "Admin",
+      "text": "a",
+      "date": "2025-03-17",
+      "postId": "3",
+      "id": 32
+    },
+    {
+      "author": "Admin",
+      "text": "tg",
+      "date": "2025-03-17",
+      "postId": "3",
+      "id": 33
+    },
+    {
+      "author": "Admin",
+      "text": "fjjhfjhf",
+      "date": "2025-03-17",
+      "postId": "3",
+      "id": 34
+    },
+    {
+      "author": "Admin",
+      "text": "ytghgli",
+      "date": "2025-03-17",
+      "postId": "7",
+      "id": 35
+    }
+  ],
+  "forums": [
+    {
+      "author": "Admin",
+      "text": "гфдсфгсд",
+      "date": "2025-03-16",
+      "id": 1
+    },
+    {
+      "author": "Admin",
+      "text": "fsdasfdasdf",
+      "date": "2025-03-16",
+      "id": 2
+    },
+    {
+      "author": "Admin",
+      "text": "fasdfasfdas",
+      "date": "2025-03-16",
+      "id": 3
+    },
+    {
+      "author": "Admin",
+      "text": "fsadfasfda",
+      "date": "2025-03-16",
+      "id": 4
+    },
+    {
+      "author": "Admin",
+      "text": "fdsasfafda",
+      "date": "2025-03-16",
+      "id": 5
+    },
+    {
+      "author": "Admin",
+      "text": "sdfasdfsafda",
+      "date": "2025-03-16",
+      "id": 7
+    },
+    {
+      "author": "Admin",
+      "text": "sadgsadfgfsdf",
+      "date": "2025-03-16",
+      "id": 8
+    },
+    {
+      "author": "Admin",
+      "text": "dfgsdgfsd",
+      "date": "2025-03-16",
+      "id": 9
+    },
+    {
+      "author": "Admin",
+      "text": "fdsghsdf",
+      "date": "2025-03-16",
+      "id": 10
+    },
+    {
+      "author": "asfdasfafdsa",
+      "text": "afdsafdasfds",
+      "date": "2025-03-16",
+      "id": 14
+    },
+    {
+      "author": "Admin",
+      "text": "hdfghd",
+      "date": "2025-03-17",
+      "id": 15
+    },
+    {
+      "author": "Admin",
+      "text": "ghdghdghdghdhdghdghdhdhddhdghdgdhgfsafgadfa",
+      "date": "2025-03-17",
+      "id": 16
     }
   ]
 }

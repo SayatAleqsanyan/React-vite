@@ -1,11 +1,10 @@
-
 import { useState } from 'react';
+import {Link} from "react-router-dom";
 import styles from './Slider.module.scss';
 
-const Slider = ({ slides }) => {
+const Slider = ({ slides, cardWidth = 400 }) => {
     const [currentPosition, setCurrentPosition] = useState(0);
-    const cardWidth = 400; // Քարտի լայնություն
-    const gap = 30; // Քարտերի միջև բացը
+    const gap = 30;
     const step = cardWidth + gap;
 
     const handleNext = () => {
@@ -33,20 +32,21 @@ const Slider = ({ slides }) => {
                     style={{ transform: `translateX(${currentPosition}px)` }}
                 >
                     {slides.map((slide) => (
-                        <div key={slide.id} className={styles.cardItem}>
-                            <div className={styles.imageDiv}>
-                                <img
-                                    src={slide.image}
-                                    alt={slide.title}
-                                    className={styles.image}
-                                    loading="lazy"
-                                />
-                            </div>
-                            <h3 className={styles.productName}>{slide.title}</h3>
+                      <div key={slide.id} className={styles.cardItem}>
+                        <Link to={ `/products/${slide.id}` } >
+                          <div>
+                            <h3 className={styles.productName}>{slide.name}</h3>
+                            <img
+                              src={slide.image}
+                              alt={slide.title}
+                              className={styles.image}
+                              loading="lazy"
+                            />
+                          </div>
                             <p className={styles.productBody}>{slide.description}</p>
-                            <div className={styles.productPrice}>{slide.price}</div>
-                            <button className={styles.button}>Գնել հիմա</button>
-                        </div>
+                            <p className={styles.productPrice}>{slide.price} $</p>
+                        </Link>
+                      </div>
                     ))}
                 </div>
             </div>

@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
-    <div className="App bg-gray-400 dark:bg-gray-800 dark:text-white min-h-[100vh] grid grid-rows-[auto_1fr_auto]">
+    <div className="App transition-colors duration-1000 bg-radial from-orange-100  to-red-100  dark:from-sky-700 dark:to-slate-900 dark:text-white min-h-[100vh] grid grid-rows-[auto_1fr_auto]">
 
       {user.isBlocked === true
         ? <div className="flex flex-col justify-center items-center min-h-[100vh]">
@@ -50,8 +50,6 @@ function App() {
           <Footer />
         </>
       }
-
-
     </div>
   )
 }

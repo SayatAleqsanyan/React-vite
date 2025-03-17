@@ -1,67 +1,127 @@
-/* Slider.module.css */
 .container {
   position: relative;
-  padding: 0 60px;
+  padding: 0 80px 0 40px;
   margin: 2rem auto;
   max-width: 1400px;
-}
-
-.wrapper {
-  overflow: hidden;
-  border-radius: 15px;
-}
-
-.cardList {
   display: flex;
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  gap: 30px;
-  padding: 20px 0;
+  justify-content: center;
+
+  .wrapper {
+    overflow: hidden;
+    border-radius: 15px;
+    display: flex;
+
+    .cardList {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      gap: 30px;
+      padding: 20px 0;
+      cursor: pointer;
+
+      .cardItem {
+        flex: 0 0 400px;
+        background: rgba(0, 0, 0, 0.2);
+        border: 2px solid rgba(0, 0, 0, 0.4);
+        border-radius: 15px;
+        padding: 25px;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.4);
+        }
+
+        &:hover .image {
+          transform: scale(1.1);
+        }
+
+        .productName {
+          font-size: 30px;
+          font-weight: bold;
+          text-align: center;
+        }
+
+        .productBody {
+          margin: 15px 0;
+          font-size: 20px;
+          max-height: 180px;
+          overflow: hidden;
+        }
+
+        .productPrice {
+          font-size: 20px;
+          font-weight: bold;
+          padding: 5px;
+
+        }
+
+        .image {
+          margin: 15px 0;
+          border-radius: 20px;
+        }
+      }
+
+      .cardItem:hover {
+        box-shadow: 0 10px 30px rgba(0, 255, 0, 0.2);
+      }
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(0, 255, 0, 0.5);
+    border-radius: 50%;
+    background: rgba(0, 255, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(0, 255, 0, 0.3);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: default;
+    }
+  }
+
+  .arrowLeft {
+    left: -20px;
+  }
+
+  .arrowRight {
+    right:37px;
+  }
 }
 
-.cardItem {
-  flex: 0 0 400px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 15px;
-  padding: 25px;
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+@media screen and (max-width: 1500px) {
+  .container {
+    max-width: 950px;
+
+    .arrowRight {
+      right: 20px;
+    }
+  }
+
+
 }
 
-.cardItem:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 255, 0, 0.2);
-}
+@media screen and (max-width: 1050px) {
+  .container {
+    max-width: 550px;
 
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  border: 2px solid rgba(0, 255, 0, 0.5);
-  border-radius: 50%;
-  background: rgba(0, 255, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.3s ease;
+    .arrowRight {
+      right: 50px;
+    }
+  }
 }
-
-.arrow:hover {
-  background: rgba(0, 255, 0, 0.3);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.arrow:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-.arrowLeft {
-  left: 20px;
-}
-
-.arrowRight {
-  right: 20px;
-}
-
-/* Մնացած ոճերը նույնն են ինչ նախորդ օրինակում */

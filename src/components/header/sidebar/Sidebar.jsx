@@ -9,7 +9,7 @@ const Sidebar = () => {
   const handleToggle = () => setIsCollapsed(!isCollapsed);
 
   return (
-    <aside className={` bg-gray-300 dark:bg-gray-900
+    <aside className={`bg-blue-600 dark:bg-gray-900 z-20 
     ${Styles.sidebar} ${isCollapsed ? Styles.collapsed : Styles.expanded}`}>
       <button
         className={Styles.toggle}

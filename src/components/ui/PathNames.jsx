@@ -5,9 +5,7 @@ const PathNames = (pathname) => {
     return (segment.charAt(0).toUpperCase() + segment.slice(1));
   });
 
-  const displayPath = pathname === "/" ? "Home" : [...breadcrumbs].join(" > ");
-
-  return displayPath
+  return pathname === "/" ? "Home" : [...breadcrumbs].join(" > ");
 };
 
 export default PathNames;

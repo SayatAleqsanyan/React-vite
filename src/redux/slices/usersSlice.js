@@ -13,6 +13,18 @@ export const fetchUsers = createAsyncThunk(
   }
 );
 
+export const updateUser = createAsyncThunk(
+  'user/updateUser',
+  async ({ id, updatedUser }, { rejectWithValue }) => {
+    try {
+      const response = await axios.put(`http://localhost:4000/user/${id}`, updatedUser);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 export const toggleUserBlock = createAsyncThunk(
   'users/toggleUserBlock',
   async ({ id, isBlocked }, { rejectWithValue }) => {
@@ -68,7 +80,15 @@ const usersSlice = createSlice({
 
     .addCase(deleteUser.fulfilled, (state, action) => {
       state.users = state.users.filter(user => user.id !== action.payload);
-    });
+    })
+
+    .addCase(updateUser.fulfilled, (state, action) => {
+      const index = state.users.findIndex(p => p.id === action.payload.id);
+      if (index !== -1) {
+        state.users[index] = action.payload;
+      }
+      state.status = 'succeeded';
+    })
   }
 });
 

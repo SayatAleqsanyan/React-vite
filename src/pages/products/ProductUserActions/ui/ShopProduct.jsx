@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {useProductUserActions} from "../logic/useProductUserActions.jsx";
 
-export const AddUserToProduct = ({ product, onActionComplete }) => {
+export const ShopProduct = ({ product, onActionComplete }) => {
   const { performAction } = useProductUserActions();
   const [userName, setUserName] = useState('');
 

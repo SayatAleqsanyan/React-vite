@@ -1,4 +1,5 @@
-import {useProductUserActions} from "./useProductUserActions.jsx";
+import {useProductUserActions} from "../logic/useProductUserActions.jsx";
+import { ThumbsDown, ThumbsUp} from "lucide-react"
 
 export const LikeDislikeButtons = ({ product, userName, onActionComplete }) => {
   const { performAction } = useProductUserActions();
@@ -16,22 +17,23 @@ export const LikeDislikeButtons = ({ product, userName, onActionComplete }) => {
   };
 
   return (
-    <div className="flex items-center space-x-2">
-      <button
-        onClick={handleLike}
-        className={`px-2 py-1 rounded flex items-center ${isLiked ? 'bg-green-500 text-white' : 'bg-gray-200'}`}
-      >
-        <span className="mr-1">👍</span>
-        <span>{isLiked ? 'Հավանված' : 'Հավանել'}</span>
-      </button>
+    <div className="flex items-center space-x-3">
 
-      <button
-        onClick={handleDislike}
-        className={`px-2 py-1 rounded flex items-center ${isDisliked ? 'bg-red-500 text-white' : 'bg-gray-200'}`}
-      >
-        <span className="mr-1">👎</span>
-        <span>{isDisliked ? 'Հակահավանված' : 'Հակահավանել'}</span>
-      </button>
+      <div className="flex items-center space-x-1">
+        <span>{product.like.length}</span>
+        <ThumbsUp
+          onClick={handleLike}
+          className={`border-none cursor-pointer " ${isLiked ? "text-green-500/50"  : 'text-white/50'} hover:text-green-500`}
+        />
+      </div>
+
+      <div className="flex items-center space-x-1">
+        <span>{product.dislike.length}</span>
+        <ThumbsDown
+          onClick={handleDislike}
+          className={`border-none cursor-pointer " ${isDisliked ? "text-red-500/50"  : 'text-white/50'} hover:text-red-500`}
+        />
+      </div>
     </div>
   );
 };

@@ -8,16 +8,16 @@ const UserPage = ({ isCollapsed }) => {
   const token = localStorage.getItem("Token");
 
   return (
-      <div>
+      <>
         <div
-          className={`border-l-4 border-l-transparent ${Styles.menuItem}`}
+          className={`border-l-4 border-l-transparent hover:bg-gray-700/50 ${Styles.menuItem}`}
           onClick={() => setIsOpen(!isOpen)}
         >
           <CircleUser />
           <span className={isCollapsed ? '' : Styles.hidden}>{token}</span>
         </div>
         <UserDropdownMenu isOpen={isOpen} setIsOpen={setIsOpen} isCollapsed={isCollapsed} />
-      </div>
+      </>
   );
 };
 

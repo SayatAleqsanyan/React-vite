@@ -45,12 +45,12 @@ export const loginUser = createAsyncThunk(
 );
 
 
-export const profilUser = createAsyncThunk(
-  'auth/profilUser',
-  async (profilData, { dispatch, rejectWithValue }) => {
+export const profileUser = createAsyncThunk(
+  'auth/profileUser',
+  async (profileData, { dispatch, rejectWithValue }) => {
     try {
       const users = await dispatch(getUsers()).unwrap();
-      const { userName } = profilData;
+      const { userName } = profileData;
       const foundUser = users.find((user) => user.userName === userName);
       if (foundUser) {
         return foundUser;

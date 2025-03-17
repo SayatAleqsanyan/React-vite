@@ -1,5 +1,5 @@
 import {Star} from "lucide-react";
-import {useProductUserActions} from "../useProductUserActions.jsx";
+import {useProductUserActions} from "../logic/useProductUserActions.jsx";
 
 export const FavoriteButton = ({ product, userName, onActionComplete }) => {
   const { performAction } = useProductUserActions();
@@ -13,7 +13,7 @@ export const FavoriteButton = ({ product, userName, onActionComplete }) => {
   return (
     <Star
       onClick={toggleFavorite}
-      className={`border-none cursor-pointer hover:text-yellow-500" ${isFavorite ? "hover:text-yellow-500/50"  : 'bg-gray-200'}`}
+      className={`border-none cursor-pointer " ${isFavorite ? "text-yellow-500/50"  : 'text-white/50'} hover:text-yellow-500`}
     />
   );
 };

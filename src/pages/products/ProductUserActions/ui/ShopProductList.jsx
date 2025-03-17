@@ -1,4 +1,4 @@
-export const ProductUsersList = ({ product }) => {
+export const ShopProductList = ({ product }) => {
   return (
     <div className="mt-4">
       <h3 className="font-semibold mb-2">Օգտատերեր</h3>

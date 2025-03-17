@@ -1,4 +1,4 @@
-import {handleProductUserAction} from "./licks/handleProductUserAction.jsx";
+import {handleProductUserAction} from "./handleProductUserAction.jsx";
 import {useDispatch} from "react-redux";
 
 export const useProductUserActions = () => {

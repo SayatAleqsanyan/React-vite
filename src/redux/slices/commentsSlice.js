@@ -26,7 +26,7 @@ export const createComments = createAsyncThunk(
 );
 
 export const removeComments = createAsyncThunk(
-  'comments/removeProducts',
+  'comments/removeComments',
   async (id, { rejectWithValue }) => {
     try {
       await axios.delete(`http://localhost:4000/comments/${id}`);
@@ -59,14 +59,24 @@ const commentsSlice = createSlice({
       state.error = action.payload;
     })
 
+    .addCase(createComments.pending, (state) => {
+
+    })
     .addCase(createComments.fulfilled, (state, action) => {
       state.comments.push(action.payload);
-      state.status = 'succeeded';
+    })
+    .addCase(createComments.rejected, (state, action) => {
+      state.error = action.payload;
     })
 
+    // Remove comment
+    .addCase(removeComments.pending, (state) => {
+    })
     .addCase(removeComments.fulfilled, (state, action) => {
       state.comments = state.comments.filter(comment => comment.id !== action.payload);
-      state.status = 'succeeded';
+    })
+    .addCase(removeComments.rejected, (state, action) => {
+      state.error = action.payload;
     });
   }
 });

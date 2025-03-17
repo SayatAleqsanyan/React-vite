@@ -37,6 +37,18 @@ export const removeProduct = createAsyncThunk(
   }
 );
 
+export const updateProduct = createAsyncThunk(
+  'products/updateProduct',
+  async ({ id, updatedProduct }, { rejectWithValue }) => {
+    try {
+      const response = await axios.put(`http://localhost:4000/products/${id}`, updatedProduct);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 const productsSlice = createSlice({
   name: 'products',
   initialState: {
@@ -67,7 +79,15 @@ const productsSlice = createSlice({
     .addCase(removeProduct.fulfilled, (state, action) => {
       state.products = state.products.filter(product => product.id !== action.payload);
       state.status = 'succeeded';
-    });
+    })
+
+    .addCase(updateProduct.fulfilled, (state, action) => {
+      const index = state.products.findIndex(p => p.id === action.payload.id);
+      if (index !== -1) {
+        state.products[index] = action.payload;
+      }
+      state.status = 'succeeded';
+    })
   }
 });
 

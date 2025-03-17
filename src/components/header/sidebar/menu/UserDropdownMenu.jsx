@@ -1,5 +1,6 @@
 import Styles from "../Sidebar.module.scss";
 import {useNavigate} from "react-router-dom";
+import {LogOut, Settings, UserPen} from "lucide-react"
 
 const UserDropdownMenu = ({ isOpen, setIsOpen, isCollapsed }) => {
   const navigator = useNavigate()
@@ -12,7 +13,7 @@ const UserDropdownMenu = ({ isOpen, setIsOpen, isCollapsed }) => {
 
   return (
     <div
-      className={` 
+      className={` z-999
       ${!isCollapsed ? "right-55" : "right-15"}
       ${Styles.dropDownProfile} ${isOpen ? Styles.open : ""}`}
       onClick={(e) => {
@@ -20,22 +21,22 @@ const UserDropdownMenu = ({ isOpen, setIsOpen, isCollapsed }) => {
         setIsOpen(false);
       }}
     >
-      <div className={`${Styles.menuContainer} bg-gray-200 dark:bg-gray-950 `}>
+      <div className={`${Styles.menuContainer} bg-blue-700  dark:bg-gray-950 `}>
         <ul className={Styles.menuList}>
           <li
             onClick={(e) => {
               e.stopPropagation();
               navigator(`profile/${token}`)
             }}
-            className={Styles.menuItem}>Profile</li>
-          <li className={Styles.menuItem}>Settings</li>
+            className={`${Styles.menuItem} hover:bg-gray-700/50`}><UserPen /> Profile</li>
           <li
             onClick={(e) => {
               e.stopPropagation();
               handleLogout();
             }}
-            className={Styles.menuItem}
+            className={`${Styles.menuItem} hover:bg-gray-700/50`}
           >
+            <LogOut />
             Logout
           </li>
         </ul>

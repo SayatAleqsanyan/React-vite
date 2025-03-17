@@ -1,14 +1,15 @@
 import {Link, useNavigate, useParams} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import {useEffect, useState} from "react";
 import {fetchProducts} from '../../redux/slices/productsSlice';
 import ProductComments from "./ProductComments.jsx";
-import { Undo2, Star, FilePenLine } from "lucide-react"
+import { Undo2, FilePenLine } from "lucide-react"
+import {FavoriteButton} from "./ProductUserActions/ui/FavoriteButton.jsx";
 
 const ProductPage = () => {
-  const { id } = useParams();
   const token = localStorage.getItem('Token')
-  console.log(id)
+  const { id } = useParams();
+
   const dispatch = useDispatch();
   const { products, status, error } = useSelector((state) => state.products);
 
@@ -55,10 +56,11 @@ const ProductPage = () => {
                 />
               </Link> }
             </div>
-            <Star
-              onClick={()=>{}}
-              className="border-none cursor-pointer hover:text-yellow-500"
+            <FavoriteButton
+              product={product}
+              userName={token}
             />
+
           </div>
           <div className="m-2.5 overflow-hidden rounded-md h-80 flex justify-center items-center">
             <img className="w-full h-full object-cover" src={product.image} alt={product.name} />
@@ -70,7 +72,8 @@ const ProductPage = () => {
         </div>
       </div>
 
-      <ProductComments />
+      <ProductComments product={product}/>
+
 
     </div>
   );

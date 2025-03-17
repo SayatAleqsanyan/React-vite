@@ -5,7 +5,7 @@ const MenuItem = ({ item, isCollapsed }) => {
   const { pathname } = useLocation()
 
   return (
-    <Link className={`${Styles.menuItem} 
+    <Link className={`${Styles.menuItem} hover:bg-gray-700/50
                 ${pathname === item.path 
       ? 'border-l-4 border-l-green-500' 
       : 'border-l-4 border-l-transparent'}`}
