@@ -1,0 +1,67 @@
+/* Slider.module.css */
+.container {
+  position: relative;
+  padding: 0 60px;
+  margin: 2rem auto;
+  max-width: 1400px;
+}
+
+.wrapper {
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.cardList {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.cardItem {
+  flex: 0 0 400px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 255, 0, 0.2);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(0, 255, 0, 0.5);
+  border-radius: 50%;
+  background: rgba(0, 255, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.arrow:hover {
+  background: rgba(0, 255, 0, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.arrowLeft {
+  left: 20px;
+}
+
+.arrowRight {
+  right: 20px;
+}
+
+/* Մնացած ոճերը նույնն են ինչ նախորդ օրինակում */
