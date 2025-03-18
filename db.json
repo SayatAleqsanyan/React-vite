@@ -5,7 +5,7 @@
       "userName": "Admin",
       "email": "Ml2bA@example.com",
       "mobile": "",
-      "password": "",
+      "password": "ssss5555#",
       "isBlocked": false,
       "firstName": "Sayat",
       "lastName": "Aleqsanyan",
@@ -240,7 +240,9 @@
       "image": "https://picsum.photos/id/12/1000/700.jpg",
       "id": "2",
       "users": [],
-      "like": [],
+      "like": [
+        "Admin"
+      ],
       "dislike": [
         "asfdasfafdsa"
       ],
@@ -257,7 +259,8 @@
       "id": "3",
       "users": [],
       "like": [
-        "Admin"
+        "Admin",
+        "asfdasfafdsa"
       ],
       "dislike": [],
       "favorites": []
@@ -269,7 +272,9 @@
       "description": "Description of Product 4",
       "image": "https://picsum.photos/id/14/1000/700.jpg",
       "users": [],
-      "like": [],
+      "like": [
+        "Admin"
+      ],
       "dislike": [],
       "favorites": [
         "Admin"
@@ -584,20 +589,6 @@
     },
     {
       "author": "Admin",
-      "text": "sgfgsfgs",
-      "date": "2025-03-16",
-      "postId": "2",
-      "id": 16
-    },
-    {
-      "author": "Admin",
-      "text": "gsfgsfg",
-      "date": "2025-03-16",
-      "postId": "2",
-      "id": 17
-    },
-    {
-      "author": "Admin",
       "text": "gsfdfgs",
       "date": "2025-03-16",
       "postId": "2",
@@ -605,24 +596,10 @@
     },
     {
       "author": "Admin",
-      "text": "fgsgfs",
-      "date": "2025-03-16",
-      "postId": "2",
-      "id": 19
-    },
-    {
-      "author": "Admin",
       "text": "tysfghs",
       "date": "2025-03-16",
       "postId": "2",
       "id": 20
-    },
-    {
-      "author": "Admin",
-      "text": "aaa",
-      "date": "2025-03-16",
-      "postId": "2",
-      "id": 21
     },
     {
       "author": "Admin",
@@ -744,12 +721,6 @@
     },
     {
       "author": "Admin",
-      "text": "fsadfasfda",
-      "date": "2025-03-16",
-      "id": 4
-    },
-    {
-      "author": "Admin",
       "text": "fdsasfafda",
       "date": "2025-03-16",
       "id": 5
@@ -759,36 +730,6 @@
       "text": "sdfasdfsafda",
       "date": "2025-03-16",
       "id": 7
-    },
-    {
-      "author": "Admin",
-      "text": "sadgsadfgfsdf",
-      "date": "2025-03-16",
-      "id": 8
-    },
-    {
-      "author": "Admin",
-      "text": "dfgsdgfsd",
-      "date": "2025-03-16",
-      "id": 9
-    },
-    {
-      "author": "Admin",
-      "text": "fdsghsdf",
-      "date": "2025-03-16",
-      "id": 10
-    },
-    {
-      "author": "Admin",
-      "text": "hdfghd",
-      "date": "2025-03-17",
-      "id": 15
-    },
-    {
-      "author": "Admin",
-      "text": "ghdghdghdghdhdghdghdhdhddhdghdgdhgfsafgadfa",
-      "date": "2025-03-17",
-      "id": 16
     }
   ]
 }
