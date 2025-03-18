@@ -1,4 +1,3 @@
-
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -37,25 +36,6 @@ export const loginUser = createAsyncThunk(
         return foundUser;
       } else {
         return rejectWithValue('Invalid email or password');
-      }
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
-
-
-export const profileUser = createAsyncThunk(
-  'auth/profileUser',
-  async (profileData, { dispatch, rejectWithValue }) => {
-    try {
-      const users = await dispatch(getUsers()).unwrap();
-      const { userName } = profileData;
-      const foundUser = users.find((user) => user.userName === userName);
-      if (foundUser) {
-        return foundUser;
-      } else {
-        return rejectWithValue('User is not defined');
       }
     } catch (error) {
       return rejectWithValue(error.message);

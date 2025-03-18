@@ -60,7 +60,7 @@ const commentsSlice = createSlice({
     })
 
     .addCase(createComments.pending, (state) => {
-
+      state.status = 'loading';
     })
     .addCase(createComments.fulfilled, (state, action) => {
       state.comments.push(action.payload);
@@ -69,8 +69,8 @@ const commentsSlice = createSlice({
       state.error = action.payload;
     })
 
-    // Remove comment
     .addCase(removeComments.pending, (state) => {
+      state.status = 'loading';
     })
     .addCase(removeComments.fulfilled, (state, action) => {
       state.comments = state.comments.filter(comment => comment.id !== action.payload);

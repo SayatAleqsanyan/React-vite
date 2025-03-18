@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import MyProfile from "./MyProfile.jsx";
-import Profile from "./Profile.jsx";
+import Profile from "./Profile/Profile.jsx";
+import EditMyProfile from "./myProfile/EditMyProfile.jsx";
 
 const UserPage = () => {
   const token = localStorage.getItem("Token");
@@ -9,7 +9,7 @@ const UserPage = () => {
   return (
     <div>
       {token === user_name
-        ? <MyProfile />
+        ? <EditMyProfile />
         : <Profile />
       }
     </div>

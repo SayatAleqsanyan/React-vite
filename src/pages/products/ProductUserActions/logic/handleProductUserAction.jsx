@@ -10,28 +10,6 @@ export const handleProductUserAction = async (product, userName, actionType, dis
   let message = '';
 
   switch (actionType) {
-    case 'ADD_USER':
-      if (product.users.includes(userName)) {
-        return { success: false, message: 'Օգտատերն արդեն ավելացված է' };
-      }
-      updatedProduct = {
-        ...product,
-        users: [...product.users, userName]
-      };
-      message = 'Օգտատերը հաջողությամբ ավելացվեց';
-      break;
-
-    case 'REMOVE_USER':
-      if (!product.users.includes(userName)) {
-        return { success: false, message: 'Օգտատերը չի գտնվել' };
-      }
-      updatedProduct = {
-        ...product,
-        users: product.users.filter(name => name !== userName)
-      };
-      message = 'Օգտատերը հաջողությամբ հեռացվեց';
-      break;
-
     case 'ADD_LIKE':
       if (product.like.includes(userName)) {
         updatedProduct = {

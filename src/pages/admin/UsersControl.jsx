@@ -12,7 +12,6 @@ const UsersList = () => {
   }, [dispatch]);
 
   const handleBlockUser = (user) => {
-
     if (user.userName === 'Admin') {
       notify("You can't block this user!", 'blue');
       return;
@@ -22,6 +21,7 @@ const UsersList = () => {
       id: user.id,
       isBlocked: user.isBlocked
     }))
+    .unwrap()
     .then(() => {
       !user.isBlocked
         ? notify(`User blocked ${user.userName}!`, 'red')
@@ -30,14 +30,13 @@ const UsersList = () => {
   };
 
   const handleDeleteUser = (user) => {
-
-
     if (user.userName === 'Admin') {
       notify("You can't delete this user!", 'blue');
       return;
     }
 
     dispatch(deleteUser(user.id))
+    .unwrap()
     .then(() => {
       notify(`User deleted ${user.userName}!`, 'red');
     });
@@ -48,7 +47,7 @@ const UsersList = () => {
 
   return (
     <div className='min-h-full w-full flex flex-col justify-center items-center py-10'>
-      <table className='mx-auto border text-center w-full bg-white  dark:bg-gray-700 text-black dark:text-white border-gray-200 dark:border-gray-600'>
+      <table className='mx-auto border text-center w-full bg-white dark:bg-gray-700 text-black dark:text-white border-gray-200 dark:border-gray-600'>
         <thead>
         <tr>
           <th className='py-2 px-4 border-b'>No</th>
@@ -66,35 +65,40 @@ const UsersList = () => {
             <td className='py-2 px-4 border-b'>{user.userName}</td>
             <td className='py-2 px-4 border-b'>{user.email}</td>
             <td className='py-2 px-4 border-b'>{user.password}</td>
-            {user.userName !== 'Admin' && (
-              <td className='py-2 px-4 border-b min-w-[130px]'>
+            <td className='py-2 px-4 border-b min-w-[130px]'>
+              {user.userName !== 'Admin' ? (
                 <button
                   className={
                     user.isBlocked
                       ? 'text-green-600 hover:text-green-800'
                       : 'text-red-600 hover:text-red-800 w-[75px]'
                   }
-                  onClick={e => {
-                    e.preventDefault()
-                    handleBlockUser(user)
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleBlockUser(user);
                   }}
                 >
-                  {!user.isBlocked ? 'Blocking' : 'Unblocking'}
+                  {!user.isBlocked ? 'Block' : 'Unblock'}
                 </button>
-              </td>
-            )}
-            {user.userName !== 'Admin' && (
-              <td className='py-2 px-4 border-b'>
+              ) : (
+                'N/A'
+              )}
+            </td>
+            <td className='py-2 px-4 border-b'>
+              {user.userName !== 'Admin' ? (
                 <button
                   className='text-red-600 hover:text-red-800 w-[75px]'
-                  onClick={e => {
-                    e.preventDefault()
-                    handleDeleteUser(user)}}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleDeleteUser(user);
+                  }}
                 >
                   Delete
                 </button>
-              </td>
-            )}
+              ) : (
+                'N/A'
+              )}
+            </td>
           </tr>
         ))}
         </tbody>

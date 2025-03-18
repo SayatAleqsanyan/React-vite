@@ -1,6 +1,6 @@
 import Styles from "../Sidebar.module.scss";
 import {useNavigate} from "react-router-dom";
-import {LogOut, Settings, UserPen} from "lucide-react"
+import {LogOut, UserPen} from "lucide-react"
 
 const UserDropdownMenu = ({ isOpen, setIsOpen, isCollapsed }) => {
   const navigator = useNavigate()

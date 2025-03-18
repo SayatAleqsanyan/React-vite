@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { getUsers } from "./authSlice.js";
 
 export const fetchUsers = createAsyncThunk(
   'users/fetchUsers',
@@ -17,7 +18,7 @@ export const updateUser = createAsyncThunk(
   'user/updateUser',
   async ({ id, updatedUser }, { rejectWithValue }) => {
     try {
-      const response = await axios.put(`http://localhost:4000/user/${id}`, updatedUser);
+      const response = await axios.put(`http://localhost:4000/users/${id}`, updatedUser);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -49,12 +50,30 @@ export const deleteUser = createAsyncThunk(
   }
 );
 
+export const profileUser = createAsyncThunk(
+  'auth/profileUser',
+  async (profileData, { dispatch, rejectWithValue }) => {
+    try {
+      const users = await dispatch(getUsers()).unwrap();
+      const { userName } = profileData;
+      const foundUser = users.find((user) => user.userName === userName);
+      if (foundUser) {
+        return foundUser;
+      } else {
+        return rejectWithValue('User not found');
+      }
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 const usersSlice = createSlice({
   name: 'users',
   initialState: {
     users: [],
     status: 'idle',
-    error: null
+    error: null,
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -70,26 +89,27 @@ const usersSlice = createSlice({
       state.status = 'failed';
       state.error = action.payload;
     })
-
     .addCase(toggleUserBlock.fulfilled, (state, action) => {
-      const index = state.users.findIndex(user => user.id === action.payload.id);
+      const index = state.users.findIndex((user) => user.id === action.payload.id);
       if (index !== -1) {
         state.users[index] = action.payload;
       }
     })
-
     .addCase(deleteUser.fulfilled, (state, action) => {
-      state.users = state.users.filter(user => user.id !== action.payload);
+      state.users = state.users.filter((user) => user.id !== action.payload);
     })
-
     .addCase(updateUser.fulfilled, (state, action) => {
-      const index = state.users.findIndex(p => p.id === action.payload.id);
+      const index = state.users.findIndex((user) => user.id === action.payload.id);
       if (index !== -1) {
         state.users[index] = action.payload;
       }
       state.status = 'succeeded';
     })
-  }
+    .addCase(profileUser.rejected, (state, action) => {
+      state.status = 'failed';
+      state.error = action.payload;
+    });
+  },
 });
 
 export default usersSlice.reducer;

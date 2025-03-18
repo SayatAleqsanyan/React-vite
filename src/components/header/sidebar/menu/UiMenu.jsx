@@ -1,21 +1,21 @@
 import { ShoppingCart, ArrowUpFromLine } from "lucide-react"
 import {useEffect, useState} from "react";
-import Shop from "../../../shop/Shop.jsx";
+import Shop from "../../../../pages/products/shop/Shop.jsx";
 import Styles from "../Sidebar.module.scss";
 
 const UiMenu = ({ isCollapsed }) => {
   const [modalActive, setModalActive] = useState(false);
   const [backToTop, setBackToTop] = useState(true);
 
-  // useEffect( ()=> {
-  //   window.addEventListener('scroll', () => {
-  //     if (window.scrollY > 100) {
-  //       setBackToTop(true)
-  //     } else {
-  //       setBackToTop(false)
-  //     }
-  //   })
-  // }, [])
+  useEffect( ()=> {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        setBackToTop(true)
+      } else {
+        setBackToTop(false)
+      }
+    })
+  }, [])
 
   const scrollToTop = () => {
     window.scrollTo({

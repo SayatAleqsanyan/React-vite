@@ -12,7 +12,7 @@ const store = configureStore({
     products: productsSlice,
     users: usersReducer,
     comments: commentsSlice,
-    forums: forumsSlice
+    forums: forumsSlice,
   },
 });
 

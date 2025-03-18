@@ -4,19 +4,19 @@
       "id": "0",
       "userName": "Admin",
       "email": "Ml2bA@example.com",
-      "mobile": null,
-      "password": "ssss5555#",
+      "mobile": "",
+      "password": "",
       "isBlocked": false,
-      "firstName": null,
-      "lastName": null,
-      "dateOfBirth": null,
-      "gender": null,
-      "address": null,
-      "company": null,
-      "profession": null,
-      "autobiography": null,
+      "firstName": "Sayat",
+      "lastName": "Aleqsanyan",
+      "dateOfBirth": "1998-06-17",
+      "gender": "",
+      "address": "",
+      "company": "",
+      "profession": "",
+      "autobiography": "",
       "skills": [],
-      "imgURL": null
+      "imgURL": "https://picsum.photos/id/9/200"
     },
     {
       "id": "1",
@@ -225,9 +225,13 @@
       "image": "https://picsum.photos/id/11/1000/700.jpg",
       "id": "1",
       "users": [],
-      "like": [],
+      "like": [
+        "Admin"
+      ],
       "dislike": [],
-      "favorites": []
+      "favorites": [
+        "Admin"
+      ]
     },
     {
       "name": "Product 2",
@@ -236,9 +240,7 @@
       "image": "https://picsum.photos/id/12/1000/700.jpg",
       "id": "2",
       "users": [],
-      "like": [
-        "Admin"
-      ],
+      "like": [],
       "dislike": [
         "asfdasfafdsa"
       ],
@@ -258,9 +260,7 @@
         "Admin"
       ],
       "dislike": [],
-      "favorites": [
-        "Admin"
-      ]
+      "favorites": []
     },
     {
       "id": "4",
@@ -334,7 +334,9 @@
       "description": "Description of Product 9",
       "image": "https://picsum.photos/id/19/1000/700.jpg",
       "users": [],
-      "like": [],
+      "like": [
+        "Admin"
+      ],
       "dislike": [],
       "favorites": [
         "Admin"
@@ -482,6 +484,11 @@
       "name": "dasds",
       "course": "100",
       "id": "ac9a"
+    },
+    {
+      "name": "sdad",
+      "course": "asd",
+      "id": "h4Xjjsb"
     }
   ],
   "images": [
@@ -770,12 +777,6 @@
       "text": "fdsghsdf",
       "date": "2025-03-16",
       "id": 10
-    },
-    {
-      "author": "asfdasfafdsa",
-      "text": "afdsafdasfds",
-      "date": "2025-03-16",
-      "id": 14
     },
     {
       "author": "Admin",

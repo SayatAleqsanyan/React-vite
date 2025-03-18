@@ -5,7 +5,7 @@ import {useLocation} from "react-router-dom";
 import {useEffect, useState} from "react";
 import PathNames from "./components/ui/PathNames.jsx";
 import {useDispatch} from "react-redux";
-import {profilUser} from "./redux/slices/authSlice.js";
+import {profileUser} from "./redux/slices/usersSlice.js";
 
 function App() {
   const { pathname } = useLocation()
@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     async function fetchUserInfo() {
       try {
-        const userData = await dispatch(profilUser({ userName: token })).unwrap();
+        const userData = await dispatch(profileUser({ userName: token })).unwrap();
         setUser(userData);
       } catch (error) {
         console.error("Failed to fetch user data:", error);
