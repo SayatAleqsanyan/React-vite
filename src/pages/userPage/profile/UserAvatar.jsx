@@ -11,7 +11,6 @@ export const UserAvatar = ({ imgURL, userName }) => {
     );
   }
 
-  // Fallback to initials avatar if no image URL
   const initials = userName ? userName.substring(0, 2).toUpperCase() : "??";
 
   return (
