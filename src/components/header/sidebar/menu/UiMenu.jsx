@@ -1,6 +1,6 @@
 import { ShoppingCart, ArrowUpFromLine } from "lucide-react"
 import {useEffect, useState} from "react";
-import Shop from "../../../../pages/products/shop/Shop.jsx";
+import Shop from "../../../../pages/products/Shop.jsx";
 import Styles from "../Sidebar.module.scss";
 
 const UiMenu = ({ isCollapsed }) => {

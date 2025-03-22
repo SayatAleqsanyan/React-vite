@@ -1,6 +1,6 @@
 import {updateProduct} from "../../../../redux/slices/productsSlice.js";
 
-export const handleProductUserAction = async (product, userName, actionType, dispatch) => {
+export const handleProductUserAction = async (product, userName, actionType, dispatch, ...args) => {
   if (!product || !userName) {
     console.error('Product և userName-ը պարտադիր են');
     return { success: false, message: 'Invalid product or userName' };
@@ -10,6 +10,26 @@ export const handleProductUserAction = async (product, userName, actionType, dis
   let message = '';
 
   switch (actionType) {
+    case 'ADD_SHOP_PRODUCT':
+      const userIndex = product.users.findIndex(item =>
+        (typeof item === 'object' && item.user === userName) || item === userName
+      );
+
+      if (userIndex !== -1) {
+        updatedProduct = {
+          ...product,
+          users: product.users.filter((_, index) => index !== userIndex)
+        };
+        message = 'Հեռացվեց զամբյուղից';
+      } else {
+        updatedProduct = {
+          ...product,
+          users: [...product.users, { user: userName, quantity: 1 }]
+        };
+        message = 'Ավելացվեց զամբյուղին';
+      }
+      break;
+
     case 'ADD_LIKE':
       if (product.like.includes(userName)) {
         updatedProduct = {
@@ -67,6 +87,27 @@ export const handleProductUserAction = async (product, userName, actionType, dis
           favorites: [...product.favorites, userName]
         };
         message = 'Ավելացվեց նախընտրածներին';
+      }
+      break;
+
+    case 'UPDATE_QUANTITY':
+      const qtyUserIndex = product.users.findIndex(item =>
+        typeof item === 'object' && item.user === userName
+      );
+
+      if (qtyUserIndex !== -1) {
+        const newUsers = [...product.users];
+        const newQuantity = parseInt(args[0]) || 1;
+        newUsers[qtyUserIndex] = {
+          ...newUsers[qtyUserIndex],
+          quantity: newQuantity
+        };
+
+        updatedProduct = {
+          ...product,
+          users: newUsers
+        };
+        message = 'Քանակը թարմացվել է';
       }
       break;
 

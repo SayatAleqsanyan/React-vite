@@ -4,7 +4,7 @@ import { SkillsList } from './SkillsList';
 
 export const UserProfileInfo = ({ user }) => {
   return (
-    <div className="space-y-4">
+    <div className="flex flex-col items-center space-y-4">
       <div className="flex items-center space-x-4">
         <UserAvatar imgURL={user.imgURL} userName={user.userName} />
         <div>

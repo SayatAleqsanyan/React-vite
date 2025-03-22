@@ -9,6 +9,7 @@ const ProductControl = () => {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const [button, setButton] =useState(false)
 
   const dispatch = useDispatch();
   const { products, status, error } = useSelector((state) => state.products);
@@ -66,45 +67,62 @@ const ProductControl = () => {
 
   return (
     <div className='min-h-full w-full flex flex-col justify-center items-center'>
-      <form
-        onSubmit={handleAddProduct}
-        className="h-[500px] my-10  w-1/2 flex flex-col justify-center items-center gap-4 bg-gray-300 p-4 rounded-3xl mb-6 dark:bg-gray-700 dark:text-white"
-      >
-        <input
-          value={productName}
-          onChange={(e) => setProductName(e.target.value)}
-          type="text"
-          placeholder="Product name"
-          className="w-full p-2 rounded"
-        />
-        <input
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-          type="number"
-          placeholder="Price"
-          className="w-full p-2 rounded"
-        />
-        <input
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          type="text"
-          placeholder="Description"
-          className="w-full p-2 rounded"
-        />
-        <input
-          value={imageUrl}
-          onChange={(e) => setImageUrl(e.target.value)}
-          type="text"
-          placeholder="Image URL"
-          className="w-full p-2 rounded"
-        />
-        <button
-          type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800"
-        >
-          Add New Product
-        </button>
-      </form>
+      {
+        button
+          ? <form
+            onSubmit={handleAddProduct}
+            className="h-[500px] my-10  w-1/2 flex flex-col justify-center items-center gap-4 bg-gray-300 p-4 rounded-3xl mb-6 dark:bg-gray-700 dark:text-white"
+          >
+            <input
+              value={productName}
+              onChange={(e) => setProductName(e.target.value)}
+              type="text"
+              placeholder="Product name"
+              className="w-full p-2 rounded"
+            />
+            <input
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              type="number"
+              placeholder="Price"
+              className="w-full p-2 rounded"
+            />
+            <input
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              type="text"
+              placeholder="Description"
+              className="w-full p-2 rounded"
+            />
+            <input
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
+              type="text"
+              placeholder="Image URL"
+              className="w-full p-2 rounded"
+            />
+            <div className="flex w-full max-w-[500px] justify-evenly">
+              <button
+                type="submit"
+                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800"
+              >
+                Add New Product
+              </button>
+              <button
+                type="button"
+                className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-800"
+                onClick={()=>setButton(!button)}
+              >
+                Closed
+              </button>
+            </div>
+          </form>
+          : <button
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 mb-10"
+            onClick={()=>setButton(!button)}
+          > Add New Product </button>
+
+      }
 
       <table className='w-full border text-center bg-white dark:bg-gray-700 text-black dark:text-white border-gray-200 dark:border-gray-600 '>
         <thead>

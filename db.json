@@ -40,19 +40,21 @@
       "id": "2",
       "userName": "asfdasfafdsa",
       "email": "afsdasda@dsa.ri",
-      "mobile": null,
+      "mobile": "+374 93 000000",
       "password": "s111111#",
       "isBlocked": false,
-      "firstName": null,
-      "lastName": null,
-      "dateOfBirth": null,
-      "gender": null,
-      "address": null,
-      "company": null,
-      "profession": null,
-      "autobiography": null,
-      "skills": [],
-      "imgURL": null
+      "firstName": "Asfda",
+      "lastName": "Sfafdsa",
+      "dateOfBirth": "1999-07-08",
+      "gender": "",
+      "address": "Armenia Erevan",
+      "company": "BeeOnCode",
+      "profession": "",
+      "autobiography": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, culpa possimus tempore sapiente suscipit eius iure magni dolores amet animi vero iusto, repellat molestias eligendi aspernatur nihil molestiae omnis ad!",
+      "skills": [
+        "HTML, CSS, JS"
+      ],
+      "imgURL": "https://picsum.photos/id/1/200"
     },
     {
       "id": "3",
@@ -224,14 +226,17 @@
       "description": "Description of Product 1",
       "image": "https://picsum.photos/id/11/1000/700.jpg",
       "id": "1",
-      "users": [],
+      "users": [
+        {
+          "user": "asfdasfafdsa",
+          "quantity": 4
+        }
+      ],
       "like": [
         "Admin"
       ],
       "dislike": [],
-      "favorites": [
-        "Admin"
-      ]
+      "favorites": []
     },
     {
       "name": "Product 2",
@@ -239,7 +244,12 @@
       "description": "Description of Product 2",
       "image": "https://picsum.photos/id/12/1000/700.jpg",
       "id": "2",
-      "users": [],
+      "users": [
+        {
+          "user": "Admin",
+          "quantity": 2
+        }
+      ],
       "like": [
         "Admin"
       ],
@@ -247,8 +257,8 @@
         "asfdasfafdsa"
       ],
       "favorites": [
-        "asfdasfafdsa",
-        "Admin"
+        "Admin",
+        "asfdasfafdsa"
       ]
     },
     {
@@ -276,9 +286,7 @@
         "Admin"
       ],
       "dislike": [],
-      "favorites": [
-        "Admin"
-      ]
+      "favorites": []
     },
     {
       "id": "5",
@@ -301,7 +309,16 @@
       "description": "Description of Product 6",
       "image": "https://picsum.photos/id/16/1000/700.jpg",
       "id": "6",
-      "users": [],
+      "users": [
+        {
+          "user": "asfdasfafdsa",
+          "quantity": 1
+        },
+        {
+          "user": "Admin",
+          "quantity": 4
+        }
+      ],
       "like": [],
       "dislike": [],
       "favorites": []
@@ -313,12 +330,15 @@
       "image": "https://picsum.photos/id/17/1000/700.jpg",
       "id": "7",
       "users": [],
-      "like": [],
+      "like": [
+        "asfdasfafdsa"
+      ],
       "dislike": [
         "Admin"
       ],
       "favorites": [
-        "Admin"
+        "Admin",
+        "asfdasfafdsa"
       ]
     },
     {
@@ -433,7 +453,9 @@
       "users": [],
       "like": [],
       "dislike": [],
-      "favorites": []
+      "favorites": [
+        "Admin"
+      ]
     },
     {
       "id": "18",
@@ -698,6 +720,13 @@
       "date": "2025-03-17",
       "postId": "7",
       "id": 35
+    },
+    {
+      "author": "asfdasfafdsa",
+      "text": "տգհֆգհգֆ",
+      "date": "2025-03-22",
+      "postId": "7",
+      "id": 36
     }
   ],
   "forums": [
@@ -721,15 +750,39 @@
     },
     {
       "author": "Admin",
-      "text": "fdsasfafda",
-      "date": "2025-03-16",
+      "text": "fgsdf",
+      "date": "2025-03-19",
+      "id": 4
+    },
+    {
+      "author": "Admin",
+      "text": "fgsdgfsd",
+      "date": "2025-03-19",
       "id": 5
     },
     {
       "author": "Admin",
-      "text": "sdfasdfsafda",
-      "date": "2025-03-16",
+      "text": "fgsgfsgfs",
+      "date": "2025-03-19",
+      "id": 6
+    },
+    {
+      "author": "Admin",
+      "text": "fgsgfsfgs",
+      "date": "2025-03-19",
       "id": 7
+    },
+    {
+      "author": "Admin",
+      "text": "safhlfkhasdfijhassfjd\nsdafasdfasgdasgf\nfgsadgklas;dga",
+      "date": "2025-03-19",
+      "id": 8
+    },
+    {
+      "author": "asfdasfafdsa",
+      "text": "sasad",
+      "date": "2025-03-22",
+      "id": 9
     }
   ]
 }

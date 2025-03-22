@@ -36,7 +36,7 @@ const EditMyProfile = () => {
       setEditValues({
         userName: user.userName || '',
         email: user.email || '',
-        password: '',
+        password: user.password || '',
         firstName: user.firstName || '',
         lastName: user.lastName || '',
         gender: user.gender || '',
@@ -65,7 +65,7 @@ const EditMyProfile = () => {
         ...user,
         userName: editValues.userName,
         email: editValues.email,
-        password: '',
+        password: editValues.password,
         firstName: editValues.firstName,
         lastName: editValues.lastName,
         gender: editValues.gender,

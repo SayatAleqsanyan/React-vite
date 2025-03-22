@@ -8,6 +8,7 @@ import { Filter, FilterX } from "lucide-react"
 
 
 const ProductsList = () => {
+  const token = localStorage.getItem("Token")
   const dispatch = useDispatch();
   const { products, status, error } = useSelector((state) => state.products);
 
@@ -51,7 +52,7 @@ const ProductsList = () => {
     return sortedProducts.filter((product) =>
       product.price >= value[0] &&
       product.price <= value[1] &&
-      (!filterFavorites || product.favorites.length > 0)
+      (!filterFavorites || product.favorites.findIndex(item => item === token) !== -1)
     );
   }, [sortedProducts, value, filterFavorites]);
 
