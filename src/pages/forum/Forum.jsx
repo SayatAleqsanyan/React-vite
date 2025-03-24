@@ -64,8 +64,9 @@ const Forum = () => {
   }, 100);
 
   return (
-    <div className="flex flex-col h-[30vh] max-w-[1000ppx]">
-      <div className=" bg-gray-400 dark:bg-gray-700 dark:text-white shadow-sm border border-slate-200 dark:border-slate-900 flex-1">        <h2 className="mx-auto my-3 text-xl font-semibold text-center text-slate-700 dark:text-white">Forum</h2>
+    <div className="flex flex-col h-[30vh] w-[1000px] max-w-[80vw]">
+      <div className=" bg-gray-400 dark:bg-gray-700 dark:text-white shadow-sm border border-slate-200 dark:border-slate-900 flex-1">
+        <h2 className="mx-auto my-3 text-xl font-semibold text-center text-slate-700 dark:text-white">Forum</h2>
         <div
           ref={forumsContainerRef}
           className="h-[500px] overflow-y-auto p-4 bg-gray-300 dark:bg-gray-800"
@@ -101,7 +102,7 @@ const Forum = () => {
                     }
                   </div>
                 </div>
-                <p className="text-slate-600 dark:text-gray-300 min-w-[1200px]">{message.text}</p>
+                <p className="text-slate-600 dark:text-gray-300">{message.text}</p>
               </div>
             ))
           ) : (

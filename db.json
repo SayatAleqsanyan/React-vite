@@ -40,21 +40,19 @@
       "id": "2",
       "userName": "asfdasfafdsa",
       "email": "afsdasda@dsa.ri",
-      "mobile": "+374 93 000000",
+      "mobile": null,
       "password": "s111111#",
       "isBlocked": false,
-      "firstName": "Asfda",
-      "lastName": "Sfafdsa",
-      "dateOfBirth": "1999-07-08",
-      "gender": "",
-      "address": "Armenia Erevan",
-      "company": "BeeOnCode",
-      "profession": "",
-      "autobiography": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, culpa possimus tempore sapiente suscipit eius iure magni dolores amet animi vero iusto, repellat molestias eligendi aspernatur nihil molestiae omnis ad!",
-      "skills": [
-        "HTML, CSS, JS"
-      ],
-      "imgURL": "https://picsum.photos/id/1/200"
+      "firstName": null,
+      "lastName": null,
+      "dateOfBirth": null,
+      "gender": null,
+      "address": null,
+      "company": null,
+      "profession": null,
+      "autobiography": null,
+      "skills": [],
+      "imgURL": null
     },
     {
       "id": "3",
@@ -229,7 +227,11 @@
       "users": [
         {
           "user": "asfdasfafdsa",
-          "quantity": 4
+          "quantity": 1
+        },
+        {
+          "user": "Admin",
+          "quantity": 2
         }
       ],
       "like": [
@@ -245,6 +247,10 @@
       "image": "https://picsum.photos/id/12/1000/700.jpg",
       "id": "2",
       "users": [
+        {
+          "user": "asfdasfafdsa",
+          "quantity": 1
+        },
         {
           "user": "Admin",
           "quantity": 2
@@ -267,10 +273,19 @@
       "description": "Description of Product 3",
       "image": "https://picsum.photos/id/13/1000/700.jpg",
       "id": "3",
-      "users": [],
+      "users": [
+        {
+          "user": "asfdasfafdsa",
+          "quantity": 1
+        },
+        {
+          "user": "Admin",
+          "quantity": 3
+        }
+      ],
       "like": [
-        "Admin",
-        "asfdasfafdsa"
+        "asfdasfafdsa",
+        "Admin"
       ],
       "dislike": [],
       "favorites": []
@@ -313,10 +328,6 @@
         {
           "user": "asfdasfafdsa",
           "quantity": 1
-        },
-        {
-          "user": "Admin",
-          "quantity": 4
         }
       ],
       "like": [],
@@ -330,15 +341,12 @@
       "image": "https://picsum.photos/id/17/1000/700.jpg",
       "id": "7",
       "users": [],
-      "like": [
-        "asfdasfafdsa"
-      ],
+      "like": [],
       "dislike": [
         "Admin"
       ],
       "favorites": [
-        "Admin",
-        "asfdasfafdsa"
+        "Admin"
       ]
     },
     {
@@ -385,7 +393,9 @@
       "description": "Description of Product 11",
       "image": "https://picsum.photos/id/21/1000/700.jpg",
       "users": [],
-      "like": [],
+      "like": [
+        "Admin"
+      ],
       "dislike": [],
       "favorites": []
     },
@@ -518,40 +528,7 @@
       "id": "h4Xjjsb"
     }
   ],
-  "images": [
-    {
-      "id": 1741448726388,
-      "files": [
-        {
-          "name": "IMG_1520_副本-1717822287.webp",
-          "url": "/uploads/file-1741448726370-618371105.webp"
-        }
-      ],
-      "uploadDate": "2025-03-08T15:45:26.388Z"
-    },
-    {
-      "id": 1741448749543,
-      "files": [
-        {
-          "name": "IMG_1518_副本-1717822286.webp",
-          "url": "/uploads/file-1741448749505-500238555.webp"
-        },
-        {
-          "name": "IMG_1520_副本-1717822287.webp",
-          "url": "/uploads/file-1741448749517-881930232.webp"
-        },
-        {
-          "name": "IMG_1521_副本-1717822288.webp",
-          "url": "/uploads/file-1741448749529-247366234.webp"
-        },
-        {
-          "name": "接地棒线夹U-type-clamp_副本-1717822292.webp",
-          "url": "/uploads/file-1741448749538-18802744.webp"
-        }
-      ],
-      "uploadDate": "2025-03-08T15:45:49.543Z"
-    }
-  ],
+  "images": [],
   "comments": [
     {
       "author": "Admin",
@@ -720,13 +697,6 @@
       "date": "2025-03-17",
       "postId": "7",
       "id": 35
-    },
-    {
-      "author": "asfdasfafdsa",
-      "text": "տգհֆգհգֆ",
-      "date": "2025-03-22",
-      "postId": "7",
-      "id": 36
     }
   ],
   "forums": [
@@ -780,9 +750,21 @@
     },
     {
       "author": "asfdasfafdsa",
-      "text": "sasad",
-      "date": "2025-03-22",
+      "text": "dsafsadgfs",
+      "date": "2025-03-24",
       "id": 9
+    },
+    {
+      "author": "asfdasfafdsa",
+      "text": "gsdgfdsgfds",
+      "date": "2025-03-24",
+      "id": 10
+    },
+    {
+      "author": "asfdasfafdsa",
+      "text": "fgdsgfsdgf",
+      "date": "2025-03-24",
+      "id": 11
     }
   ]
 }

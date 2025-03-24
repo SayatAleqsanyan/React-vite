@@ -6,8 +6,8 @@ import ProfileForm from './ProfileForm';
 import Loading from "../../../components/ui/Loading";
 import Error from "../../../components/ui/Error";
 
-
 const EditMyProfile = () => {
+  const token = localStorage.getItem("Token");
   const { user_name } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -92,6 +92,10 @@ const EditMyProfile = () => {
   const handleCancelEdit = () => {
     navigate(-1);
   };
+
+  if (user_name !== token) {
+    return navigate('/profile/' + user_name);
+  }
 
   if (status === 'loading') {
     return <Loading />;

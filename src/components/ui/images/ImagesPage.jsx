@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
-import MyImageUploading from './MyImageUploading'
+import MyImageUploading from './MyImageUploading.jsx'
 
 const About = () => {
   const [images, setImages] = useState([])

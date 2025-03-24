@@ -121,7 +121,6 @@ const ProductControl = () => {
             className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 mb-10"
             onClick={()=>setButton(!button)}
           > Add New Product </button>
-
       }
 
       <table className='w-full border text-center bg-white dark:bg-gray-700 text-black dark:text-white border-gray-200 dark:border-gray-600 '>

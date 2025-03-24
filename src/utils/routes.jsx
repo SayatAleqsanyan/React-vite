@@ -1,17 +1,18 @@
-import { House, PackageSearch, ShieldUser, FileSliders, Images, MessagesSquare, MonitorPlay, ReceiptText} from "lucide-react"
-import LogInForm from "../pages/loginForm/LogInForm.jsx";
-import Home from "../pages/home/Home.jsx";
-import Posts from "../pages/posts/Posts.jsx";
+import { House, PackageSearch, ShieldUser, FileSliders, Contact, MessagesSquare, MonitorPlay, ReceiptText} from "lucide-react"
+import LogInForm from "../pages/loginForm/LogInForm";
+import Home from "../pages/home/Home";
+import Posts from "../pages/posts/Posts";
 import {Navigate} from "react-router-dom";
-import ProductsList from "../pages/products/ProductsList.jsx";
-import ProductPage from "../pages/products/ProductPage.jsx";
-import ProductControl from "../pages/admin/ProductControl.jsx";
-import UsersList from "../pages/admin/UsersControl.jsx";
-import ProductEdit from "../pages/admin/ProductEdit.jsx";
-import ImagesPage from "../pages/images-page/ImagesPage.jsx";
-import Forum from "../pages/forum/Forum.jsx"
-import VideoPage from "../pages/videos/VideoPage.jsx";
-import UserPage from "../pages/userPage/UserPage.jsx";
+import ProductsList from "../pages/products/ProductsList";
+import ProductPage from "../pages/products/ProductPage";
+import ProductControl from "../pages/admin/ProductControl";
+import UsersList from "../pages/admin/UsersControl";
+import ProductEdit from "../pages/admin/ProductEdit";
+import ContactPage from "../pages/contact/Contact";
+import Forum from "../pages/forum/Forum"
+import VideoPage from "../pages/videos/VideoPage";
+import UserPage from "../pages/userPage/profile/Profile";
+import EditMyPage from "../pages/userPage/myProfile/EditMyProfile";
 
 export const LOGINFORM_Page = "/loginForm";
 export const HOME_Page = "/";
@@ -25,6 +26,7 @@ export const IMAGES_PAGE = "/images"
 export const FORUM_PAGE = "/forum"
 export const VIDEO_PAGE = "/video"
 export const PROFILE_PAGE = "/profile/:user_name"
+export const MY_PROFILE_PAGE = "/EditProfile/:user_name"
 
 export const publicRoutes = [
   {
@@ -60,13 +62,6 @@ export const privateRoutes = [
     menu: true
   },
   {
-    path: IMAGES_PAGE,
-    element: <ImagesPage/>,
-    icon: Images,
-    name: "Images",
-    menu: true
-  },
-  {
     path: VIDEO_PAGE,
     element: <VideoPage/>,
     icon: MonitorPlay,
@@ -81,6 +76,13 @@ export const privateRoutes = [
     menu: true
   },
   {
+    path: IMAGES_PAGE,
+    element: <ContactPage/>,
+    icon: Contact,
+    name: "Contact",
+    menu: true
+  },
+  {
     path: PRODUCT_ITEM_Page,
     element: <ProductPage/>,
     name: "Product Item",
@@ -90,6 +92,12 @@ export const privateRoutes = [
     path: PROFILE_PAGE,
     element: <UserPage/>,
     name: "Profile",
+    menu: false
+  },
+  {
+    path: MY_PROFILE_PAGE,
+    element: <EditMyPage/>,
+    name: "EditMyPage",
     menu: false
   },
   {
