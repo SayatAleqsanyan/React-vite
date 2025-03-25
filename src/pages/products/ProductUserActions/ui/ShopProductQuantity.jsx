@@ -1,8 +1,7 @@
 import { Trash2, Plus, Minus } from "lucide-react";
 import { useProductUserActions } from "../logic/useProductUserActions.jsx";
-import { useEffect } from "react";
 
-export const ShopProductQuantity = ({ product, userName, onActionComplete }) => {
+export const ShopProductQuantity = ({ product, userName, onActionComplete, price }) => {
   const { performAction } = useProductUserActions();
 
   const userProduct = product.users.find(item =>
@@ -21,11 +20,9 @@ export const ShopProductQuantity = ({ product, userName, onActionComplete }) => 
     }
 
     if (quantity === 0) {
-      // Add to cart first
       const result = await performAction(product, userName, 'ADD_SHOP_PRODUCT');
       if (result.success && onActionComplete) onActionComplete(result);
     } else {
-      // Update quantity of existing cart item
       const result = await performAction(
         product,
         userName,
@@ -45,10 +42,6 @@ export const ShopProductQuantity = ({ product, userName, onActionComplete }) => 
     return null;
   }
 
-  useEffect(() => {
-    console.log(quantity);
-  }, [quantity]);
-
   return (
     <div className="flex items-center gap-2">
       <button
@@ -62,7 +55,7 @@ export const ShopProductQuantity = ({ product, userName, onActionComplete }) => 
         min="1"
         value={quantity}
         onChange={(e) => updateQuantity(parseInt(e.target.value) || 1)}
-        className="min-w-8 w-12 text-center border rounded px-1"
+        className="min-w-10 w-12 text-center border rounded px-1"
       />
       <button
         onClick={() => updateQuantity(quantity + 1)}
@@ -77,6 +70,8 @@ export const ShopProductQuantity = ({ product, userName, onActionComplete }) => 
       >
         <Trash2 />
       </button>
+
+      <span className="min-w-[70px]">$ {Math.ceil((price * quantity) * 100) / 100}</span>
     </div>
   );
 };

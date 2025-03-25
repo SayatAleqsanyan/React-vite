@@ -60,18 +60,17 @@ const ProductsList = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold py-6 text-center">Products List</h1>
-
+    <div className="w-full pr-10">
+      <RangeSlider
+        className='block w-[70vw] my-5 mx-auto'
+        min={minPrice}
+        max={maxPrice}
+        step={(maxPrice - minPrice) / 100}
+        value={value}
+        onInput={setValue}
+      />
       <div className="px-30 flex flex-col justify-center items-center">
-        <RangeSlider
-          className='p w-[80%] my-5'
-          min={minPrice}
-          max={maxPrice}
-          step={(maxPrice - minPrice) / 100}
-          value={value}
-          onInput={setValue}
-        />
+
 
         <p className='text-lg font-semibold'>
           Filtered Price Range: ${value[0]} - ${value[1]}

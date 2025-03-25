@@ -528,7 +528,20 @@
       "id": "h4Xjjsb"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    }
+  ],
   "comments": [
     {
       "author": "Admin",

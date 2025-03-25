@@ -1,15 +1,33 @@
 import { UserAvatar } from './UserAvatar';
 import { InfoField } from './InfoField';
 import { SkillsList } from './SkillsList';
+import {UserPen} from "lucide-react";
+import {useNavigate, useParams} from "react-router-dom";
 
 export const UserProfileInfo = ({ user }) => {
+  const token = localStorage.getItem("Token");
+  const { user_name } = useParams();
+  const navigate = useNavigate();
+
+  const handleEditClick = () => {
+    navigate('/EditProfile/' + user_name);
+  };
+
+
   return (
     <div className="space-y-4">
-      <div className="flex items-center space-x-4">
-        <UserAvatar imgURL={user.imgURL} userName={user.userName} />
+      <div className="flex w-full justify-between">
+        <div className="flex items-center space-x-4">
+          <UserAvatar imgURL={user.imgURL} userName={user.userName} />
+          <div>
+            <h3 className="text-lg font-semibold">{user.firstName} {user.lastName}</h3>
+            <p className="text-gray-600 dark:text-gray-300">{user.profession}</p>
+          </div>
+        </div>
         <div>
-          <h3 className="text-lg font-semibold">{user.firstName} {user.lastName}</h3>
-          <p className="text-gray-600 dark:text-gray-300">{user.profession}</p>
+          { token === user_name && <button className="hover:text-green-700" onClick={handleEditClick}>
+            <UserPen size={25} />
+          </button> }
         </div>
       </div>
 

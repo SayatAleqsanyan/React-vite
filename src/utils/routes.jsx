@@ -13,6 +13,7 @@ import Forum from "../pages/forum/Forum"
 import VideoPage from "../pages/videos/VideoPage";
 import UserPage from "../pages/userPage/profile/Profile";
 import EditMyPage from "../pages/userPage/myProfile/EditMyProfile";
+import ImagesPage from "../components/ui/images/ImagesPage";
 
 export const LOGINFORM_Page = "/loginForm";
 export const HOME_Page = "/";
@@ -22,11 +23,12 @@ export const PRODUCT_CONTROL_Page = "/productControl";
 export const PRODUCT_ITEM_Page = "/products/:id";
 export const USER_LIST_PAGE = "/userList"
 export const PRODUCT_EDIT_PAGE = "/products/:id/edit"
-export const IMAGES_PAGE = "/images"
+export const CONTACT_PAGE = "/contact"
 export const FORUM_PAGE = "/forum"
 export const VIDEO_PAGE = "/video"
 export const PROFILE_PAGE = "/profile/:user_name"
 export const MY_PROFILE_PAGE = "/EditProfile/:user_name"
+export const IMAGES_Upload_PAGE = "/img"
 
 export const publicRoutes = [
   {
@@ -76,7 +78,7 @@ export const privateRoutes = [
     menu: true
   },
   {
-    path: IMAGES_PAGE,
+    path: CONTACT_PAGE,
     element: <ContactPage/>,
     icon: Contact,
     name: "Contact",
@@ -98,6 +100,12 @@ export const privateRoutes = [
     path: MY_PROFILE_PAGE,
     element: <EditMyPage/>,
     name: "EditMyPage",
+    menu: false
+  },
+  {
+    path: IMAGES_Upload_PAGE,
+    element: <ImagesPage/>,
+    name: "ImagesPage",
     menu: false
   },
   {

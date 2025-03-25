@@ -54,7 +54,6 @@ const UsersList = () => {
           <th className='py-2 px-4 border-b'>Name</th>
           <th className='py-2 px-4 border-b'>Email</th>
           <th className='py-2 px-4 border-b'>Password</th>
-          <th className='py-2 px-4 border-b'>Blocked</th>
           <th className='py-2 px-4 border-b'>Action</th>
         </tr>
         </thead>
@@ -67,34 +66,31 @@ const UsersList = () => {
             <td className='py-2 px-4 border-b'>{user.password}</td>
             <td className='py-2 px-4 border-b min-w-[130px]'>
               {user.userName !== 'Admin' ? (
-                <button
-                  className={
-                    user.isBlocked
-                      ? 'text-green-600 hover:text-green-800'
-                      : 'text-red-600 hover:text-red-800 w-[75px]'
-                  }
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleBlockUser(user);
-                  }}
-                >
-                  {!user.isBlocked ? 'Block' : 'Unblock'}
-                </button>
-              ) : (
-                'N/A'
-              )}
-            </td>
-            <td className='py-2 px-4 border-b'>
-              {user.userName !== 'Admin' ? (
-                <button
-                  className='text-red-600 hover:text-red-800 w-[75px]'
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleDeleteUser(user);
-                  }}
-                >
-                  Delete
-                </button>
+                <>
+                  <button
+                    className={
+                      user.isBlocked
+                        ? 'text-green-600 hover:text-green-800'
+                        : 'text-red-600 hover:text-red-800 w-[75px]'
+                    }
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleBlockUser(user);
+                    }}
+                  >
+                    {!user.isBlocked ? 'Block' : 'Unblock'}
+                  </button>
+
+                  <button
+                    className='text-red-600 hover:text-red-800 w-[75px]'
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleDeleteUser(user);
+                    }}
+                  >
+                    Delete
+                  </button>
+                </>
               ) : (
                 'N/A'
               )}
