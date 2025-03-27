@@ -8,7 +8,7 @@ import { registerUser } from "../../redux/slices/authSlice";
 
 const Register = () => {
   const dispatch = useDispatch();
-  const { register, handleSubmit, formState: { errors, isValid } } = useForm({ mode: "onBlur" });
+  const { register, handleSubmit, formState: { errors, isValid } } = useForm({ mode: "all" });
 
   const registration = async (data) => {
     const { email, password, username } = data;

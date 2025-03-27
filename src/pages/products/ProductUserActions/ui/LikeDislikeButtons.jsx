@@ -1,5 +1,8 @@
 import {useProductUserActions} from "../logic/useProductUserActions.jsx";
-import { ThumbsDown, ThumbsUp} from "lucide-react"
+import { BiLike } from "react-icons/bi";
+import { BiSolidLike } from "react-icons/bi";
+import { BiDislike } from "react-icons/bi";
+import { BiSolidDislike } from "react-icons/bi";
 
 export const LikeDislikeButtons = ({ product, userName, onActionComplete }) => {
   const { performAction } = useProductUserActions();
@@ -21,18 +24,32 @@ export const LikeDislikeButtons = ({ product, userName, onActionComplete }) => {
 
       <div className="flex items-center space-x-1">
         <span>{product.like.length}</span>
-        <ThumbsUp
+        {!isLiked ? <BiLike
+          size={30}
           onClick={handleLike}
-          className={`border-none cursor-pointer " ${isLiked ? "text-green-500/50"  : 'text-white/50'} hover:text-green-500`}
+          className={`border-none cursor-pointer text-white/50 hover:text-green-500`}
         />
+        : <BiSolidLike
+            size={30}
+            onClick={handleLike}
+            className={`border-none cursor-pointer text-green-500/50 hover:text-green-500`}
+          />
+        }
       </div>
 
       <div className="flex items-center space-x-1">
         <span>{product.dislike.length}</span>
-        <ThumbsDown
-          onClick={handleDislike}
-          className={`border-none cursor-pointer " ${isDisliked ? "text-red-500/50"  : 'text-white/50'} hover:text-red-500`}
-        />
+        {!isDisliked ? <BiDislike
+            size={30}
+            onClick={handleDislike}
+            className={`border-none cursor-pointer text-white/70 hover:text-red-500`}
+          />
+          : <BiSolidDislike
+            size={30}
+            onClick={handleDislike}
+            className={`border-none cursor-pointer text-red-500/70 hover:text-red-500`}
+          />
+        }
       </div>
     </div>
   );

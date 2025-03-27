@@ -96,7 +96,10 @@ const Forum = () => {
                     <div className="text-sm text-gray-600 dark:text-gray-400">{message.date}</div>
                     {(message.author === token || token === "Admin") &&
                       <Trash2
-                        onClick={() => dispatch(removeForums(message.id))}
+                        onClick={() => {
+                          notify(`Remove message!`, 'red')
+                          return dispatch(removeForums(message.id))
+                        }}
                         className="cursor-pointer hover:text-red-500 transition-colors"
                       />
                     }

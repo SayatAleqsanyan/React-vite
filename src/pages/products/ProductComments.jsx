@@ -17,7 +17,7 @@ const ProductComments = ({product}) => {
   const navigator = useNavigate();
 
   const filteredComments = comments.filter(comment => comment.postId === id);
-  filteredComments.reverse();
+  // filteredComments.reverse();
 
   useEffect(() => {
     if (status === 'idle') {

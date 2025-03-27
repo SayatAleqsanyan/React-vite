@@ -16,7 +16,7 @@ const Login = () => {
     setValue,
     formState: { errors, isValid },
   } = useForm({
-    mode: "onBlur",
+    mode: "all",
     defaultValues: {
       email: "",
       password: "",

@@ -5,6 +5,7 @@ import { fetchUsers, updateUser } from "../../../redux/slices/usersSlice.js";
 import ProfileForm from './ProfileForm';
 import Loading from "../../../components/ui/Loading";
 import Error from "../../../components/ui/Error";
+import {notify} from "../../../utils/notify.js";
 
 const EditMyProfile = () => {
   const token = localStorage.getItem("Token");
@@ -84,8 +85,10 @@ const EditMyProfile = () => {
         updatedUser
       })).unwrap();
       navigate(-1);
+      notify(`User unblocked!`, 'green');
     } catch (error) {
       console.error('Failed to update user:', error);
+      notify(`Failed to update user ${error}!`, 'red')
     }
   };
 

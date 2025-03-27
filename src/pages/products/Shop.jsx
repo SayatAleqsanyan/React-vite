@@ -9,7 +9,7 @@ const Shop = ({ modalActive, setModalActive }) => {
   const token = localStorage.getItem("Token")
   const [allPrice, setAllPrice] = useState(0);
   const dispatch = useDispatch();
-  const { products, status, error } = useSelector((state) => state.products);
+  const { products } = useSelector((state) => state.products);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -26,25 +26,38 @@ const Shop = ({ modalActive, setModalActive }) => {
   const shopProducts = filteredProducts
 
     useEffect(() => {
-    setAllPrice(shopProducts.reduce((acc, item) => {
+    setAllPrice(shopProducts?.reduce((acc, item) => {
       return Math.ceil((acc + item.price * item.users.find(u => u.user === token)?.quantity) * 100) / 100
     }, 0));
   }, [shopProducts]);
 
   const onClick = () => {
+    console.log('Products:', products);
 
-    if (products && Array.isArray(products.users)) {
-      console.log('jihkjn')
-      dispatch(updateProduct({
-        id: products.id,
-        updatedProduct: {
-          ...products,
-          users: products.users.filter(userObj => userObj.user !== token),
+    const updatePromises = products.map(product => {
+      const updatedProduct = { ...product };
+
+      if (updatedProduct.users && Array.isArray(updatedProduct.users)) {
+        if (updatedProduct.users.length > 0) {
+          updatedProduct.users = updatedProduct.users.filter(userObj => userObj.user !== token);
         }
-      }));
-    }
+      }
 
-    setModalActive(false);
+      return dispatch(updateProduct({
+        id: updatedProduct.id,
+        updatedProduct: updatedProduct
+      }));
+    });
+
+    Promise.all(updatePromises)
+    .then(() => {
+      setModalActive(false);
+    })
+    .catch(error => {
+      console.error('Error updating products:', error);
+    });
+
+  setModalActive(false);
   };
 
   return (
