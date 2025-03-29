@@ -11,6 +11,7 @@ const ProductEdit = () => {
   const [editValues, setEditValues] = useState({
     name: '',
     price: '',
+    discount: '',
     description: '',
     image: '',
     users: [],
@@ -26,6 +27,7 @@ const ProductEdit = () => {
       setEditValues({
         name: product.name,
         price: product.price,
+        discount: product.discount,
         description: product.description,
         image: product.image,
         users: product.users || [],
@@ -50,6 +52,8 @@ const ProductEdit = () => {
           ...product,
           name: editValues.name,
           price: editValues.price,
+          discount: editValues.discount || 0,
+          discountPrice: Math.ceil((editValues.price - (editValues.price * editValues.discount)/100)*100)/100 || editValues.price,
           description: editValues.description,
           image: editValues.image
         };
@@ -97,6 +101,12 @@ const ProductEdit = () => {
           value={editValues.price}
           onChange={e => setEditValues({ ...editValues, price: e.target.value })}
           required
+        />
+        <input
+          className='w-full p-2 border rounded mb-2 dark:bg-gray-500'
+          type="number"
+          value={editValues.discount}
+          onChange={e => setEditValues({ ...editValues, discount: e.target.value })}
         />
         <textarea
           className='w-full p-2 border rounded mb-2 dark:bg-gray-500'

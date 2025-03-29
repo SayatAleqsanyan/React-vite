@@ -23,7 +23,13 @@ const ProductItem = ({ product }) => {
         <img className="w-full h-full object-cover" src={product.image} alt={product.name} />
       </div>
       <div className="p-6 text-center">
-        <p className="text-base text-slate-600 mt-4 font-light dark:text-white dark:bg-gray-700" >Price: ${product.price}</p>
+        <p className="text-base text-slate-600 mt-4 font-light dark:text-white dark:bg-gray-700" >
+          Price:
+          {product.discount > 0
+            ? <><span className="line-through decoration-red-600"> ${product.price} </span> ${product.discountPrice}</>
+            : <>${product.price}</>
+          }
+        </p>
         <p className="text-base text-slate-600 mt-4 font-light dark:text-white dark:bg-gray-700">{product.description}</p>
       </div>
       <div className="flex justify-center items-center mb-10 gap-10">

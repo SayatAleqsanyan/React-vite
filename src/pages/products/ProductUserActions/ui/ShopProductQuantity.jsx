@@ -16,6 +16,7 @@ export const ShopProductQuantity = ({ product, userName, onActionComplete, price
         const result = await performAction(product, userName, 'ADD_SHOP_PRODUCT');
         if (onActionComplete) onActionComplete(result);
       }
+      console.log(onActionComplete)
       return;
     }
 

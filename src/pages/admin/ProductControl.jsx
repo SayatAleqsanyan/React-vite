@@ -7,6 +7,7 @@ import {Link} from "react-router-dom";
 const ProductControl = () => {
   const [productName, setProductName] = useState("");
   const [price, setPrice] = useState("");
+  const [discount, setDiscount] = useState("");
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [button, setButton] =useState(false)
@@ -40,6 +41,8 @@ const ProductControl = () => {
     const newProduct = {
       name: productName,
       price: parseFloat(price),
+      discount: parseFloat(discount),
+      discountPrice: Math.ceil((parseFloat(price) - (parseFloat(price) * parseFloat(discount))/100)*100)/100 || parseFloat(price),
       description: description,
       image: imageUrl,
       users: [],
@@ -53,6 +56,7 @@ const ProductControl = () => {
     .then(() => {
       setProductName("");
       setPrice("");
+      setDiscount("");
       setDescription("");
       setImageUrl("");
       notify("Product added successfully!", "green");
@@ -85,6 +89,13 @@ const ProductControl = () => {
               onChange={(e) => setPrice(e.target.value)}
               type="number"
               placeholder="Price"
+              className="w-full p-2 rounded"
+            />
+            <input
+              value={discount}
+              onChange={(e) => setDiscount(e.target.value)}
+              type="number"
+              placeholder="Discount"
               className="w-full p-2 rounded"
             />
             <input
@@ -129,6 +140,7 @@ const ProductControl = () => {
           <th className='py-2 px-4 border-b'>No</th>
           <th className='py-2 px-4 border-b'>Name</th>
           <th className='py-2 px-4 border-b'>Price</th>
+          <th className='py-2 px-4 border-b'>Discount</th>
           <th className='py-2 px-4 border-b'>Description</th>
           <th className='py-2 px-4 border-b'>Action</th>
         </tr>
@@ -138,7 +150,16 @@ const ProductControl = () => {
           <tr key={product.id} className='hover:bg-gray-200 dark:hover:bg-gray-600'>
             <td className='py-2 px-4 border-b'>{index + 1}</td>
             <td className='py-2 px-4 border-b'>{product.name}</td>
-            <td className='py-2 px-4 border-b'>${product.price}</td>
+            {product.discount > 0
+            ? <>
+                <td className='py-2 px-4 border-b line-through decoration-red-600'>${product.price}</td>
+                <td className='py-2 px-4 border-b'> ${ product.discountPrice } </td>
+              </>
+            : <>
+                <td className='py-2 px-4 border-b'>${product.price}</td>
+                <td className='py-2 px-4 border-b'> </td>
+              </>
+            }
             <td className='py-2 px-4 border-b'>{product.description}</td>
             <td className='py-2 px-4 border-b'>
               <Link to={`/products/${product.id}/edit`} className="text-center text-yellow-600 hover:text-yellow-800 w-[75px]"> Edit </Link>

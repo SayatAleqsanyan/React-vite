@@ -44,7 +44,12 @@ const Slider = ({ slides, cardWidth = 400 }) => {
                             />
                           </div>
                             <p className={styles.productBody}>{slide.description}</p>
-                            <p className={styles.productPrice}>{slide.price} $</p>
+                            <p className={styles.productPrice}>
+                              {slide.discount > 0
+                                ? <><span className="line-through decoration-red-600"> ${slide.price} </span> ${slide.discountPrice}</>
+                                : <>${slide.price}</>
+                              }
+                            </p>
                         </Link>
                       </div>
                     ))}

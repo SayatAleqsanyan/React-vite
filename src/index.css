@@ -10,3 +10,11 @@ button{
     transition: 0.2s;
     cursor: pointer;
 }
+
+button:disabled {
+    cursor: default;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
