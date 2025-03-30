@@ -1,9 +1,9 @@
 import { toast } from 'react-toastify'
 
-export const notify = (text, color) =>
+export const notify = (text, color, num = 2) =>
   toast(` 🔔  ${text} `, {
     position: 'top-center',
-    autoClose: 2000,
+    autoClose: num * 1000,
     autoBackgroundColor: '#777',
 
     style: {

@@ -16,6 +16,7 @@ const Register = () => {
     number: false,
     special: false
   });
+  const [resendCode, setResendCode] = useState(true);
 
   const [verificationSent, setVerificationSent] = useState(false);
   const [inputCode, setInputCode] = useState('');
@@ -100,21 +101,17 @@ const Register = () => {
 
     if (isVerified) {
       dispatch(registerUser(user)).unwrap();
-
-      setInputCode('');
-      setUserEmail('');
-      setUserName('');
-      setUser({});
-
       setVerificationSent(false);
-      notify('Email verified successfully!', 'green');
 
+      notify('Email verified successfully!', 'green');
     } else {
       notify('Verification failed. Please try again.', 'red');
     }
   };
 
   const handleResendCode = () => {
+    if (!resendCode) return
+
     if (!verifierRef.current) {
       verifierRef.current = EmailVerifier({
         number: 6,
@@ -126,8 +123,14 @@ const Register = () => {
     const code = verifierRef.current.sendEmail();
 
     if (code) {
-      notify("Verification code has been resent to your email.", "blue");
+      notify("The verification code has been resent to your email. \nThis action is unavailable for 30 seconds.", "blue", 10);
     }
+
+    setResendCode(false);
+
+    setTimeout(()=> {
+      setResendCode(true);
+    }, 30000)
   };
 
   return (
@@ -181,12 +184,12 @@ const Register = () => {
             value={inputCode}
             onChange={(e) => setInputCode(e.target.value)}
             placeholder="Verification Code"
-            className="verification-input"
+            className="border-2 border-black w-64 rounded-xl h-9 px-2 mb-3"
           />
-          <div className="verification-actions">
-            <button onClick={handleVerify} className="btn">Verify</button>
-            <button onClick={handleResendCode} className="btn-secondary">Resend Code</button>
-            <button onClick={() => setVerificationSent(false)} className="btn-secondary">Cancel</button>
+          <div>
+            <button onClick={handleVerify} className="w-[40%] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Verify</button>
+            <button disabled={!resendCode} onClick={handleResendCode} className={`${resendCode ? "" : "opacity-50 cursor-default"} w-[40%] py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700`}>Resend Code</button>
+            <button onClick={() => setVerificationSent(false)} className="w-[80%] text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Cancel</button>
           </div>
         </div>
       )}
