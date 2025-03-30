@@ -1,14 +1,7 @@
 import { FormField } from './FormField';
 import { ImagePreview } from './ImagePreview';
-import {useState} from "react";
 
 const ProfileForm = ({ editValues, setEditValues, handleSubmit, handleCancel }) => {
-  const [pictures, setPictures] = useState([]);
-  const token = localStorage.getItem("Token");
-
-
-
-
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div className="flex flex-wrap gap-4 justify-evenly items-center">

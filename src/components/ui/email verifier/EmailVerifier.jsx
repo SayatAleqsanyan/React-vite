@@ -1,5 +1,4 @@
 import emailjs from '@emailjs/browser';
-import { useRef, useState } from 'react';
 import { notify } from "../../../utils/notify.js";
 
 const emailConfig = {
@@ -9,34 +8,30 @@ const emailConfig = {
   toEmail: 'sayad.aleksanyan@mail.ru'
 };
 
-const Contact = ({ number }) => {
-  const [verification, setVerification] = useState({
+const EmailVerifier = ({ number = 7, userEmail, userName }) => {
+  let verificationData = {
     code: null,
-    email: null,
-    userName: null
-  });
-
-  const form = useRef();
+    email: userEmail,
+    userName: userName
+  };
 
   const sendEmail = (e) => {
-    e.preventDefault();
+    if (e && e.preventDefault) {
+      e.preventDefault();
+    }
 
-    const userEmail = form.current.querySelector('input[name="user_email"]').value;
-    const userName = form.current.querySelector('input[name="user_name"]').value;
-    const userMessage = form.current.querySelector('textarea[name="message"]').value;
-
-    if (!userName || !userEmail || !userMessage) {
-      notify('Please fill in all required fields');
+    if (!userName || !userEmail) {
+      notify('Please provide email and username for verification', 'red');
       return null;
     }
 
-    const code = (Math.floor(Math.random() * 10 ** number) / 10 ** number).toFixed(number);
+    const code = Math.floor(Math.random() * (10 ** number)).toString().padStart(number, '0');
 
-    setVerification({
+    verificationData = {
       code: code,
       email: userEmail,
       userName: userName
-    });
+    };
 
     const templateParams = {
       user: userEmail,
@@ -54,29 +49,32 @@ const Contact = ({ number }) => {
       emailConfig.publicKey
     )
     .then((response) => {
-      notify('Registrant Email Address Verification!', 'green');
-      form.current.reset();
+      notify('Verification email sent successfully!', 'green');
     })
     .catch((error) => {
-      notify(`Failed to send message: ${error.text}`, 'red');
+      notify(`Failed to send verification email: ${error.text}`, 'red');
     });
 
     return code;
   };
 
-  const verifyCode = (inputCode, email, userName) => {
+  const verifyCode = (inputCode, email = userEmail, name = userName) => {
     return (
-      inputCode === verification.code &&
-      email === verification.email &&
-      userName === verification.userName
+      inputCode === verificationData.code &&
+      email === verificationData.email &&
+      name === verificationData.userName
     );
+  };
+
+  const getVerificationData = () => {
+    return { ...verificationData };
   };
 
   return {
     sendEmail,
     verifyCode,
-    form
+    getVerificationData
   };
 };
 
-export default Contact;
+export default EmailVerifier;

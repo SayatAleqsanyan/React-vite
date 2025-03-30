@@ -19,6 +19,8 @@ function App() {
   const [user, setUser] = useState({});
 
   useEffect(() => {
+    if (!token) return;
+
     async function fetchUserInfo() {
       try {
         const userData = await dispatch(profileUser({ userName: token })).unwrap();
@@ -39,7 +41,7 @@ function App() {
   return (
     <div className="App transition-colors duration-1000 bg-radial from-orange-100  to-red-100  dark:from-sky-700 dark:to-slate-900 dark:text-white min-h-[100vh] grid grid-rows-[auto_1fr_auto]">
 
-      {user.isBlocked === true
+      {user?.isBlocked === true
         ? <div className="flex flex-col justify-center items-center min-h-[100vh]">
             <h1 className="text-7xl text-red-500">your account is blocked... </h1>
             <button className="text-5xl bg-red-200 hover:bg-red-400 w-[300px] h-[100px] mt-10" onClick={LogOut}>Logout </button>

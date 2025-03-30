@@ -86,45 +86,55 @@ const ProductEdit = () => {
   }
 
   return (
-    <div className='mt-4 p-4 bg-white border rounded dark:bg-gray-800'>
+    <div className='mt-4 p-4 bg-white border rounded max-w-[800px] w-full min-w-[300px] dark:bg-gray-800'>
       <form onSubmit={handleUpdateProduct}>
-        <input
-          className='w-full p-2 border rounded mb-2 dark:bg-gray-500'
-          type="text"
-          value={editValues.name}
-          onChange={e => setEditValues({ ...editValues, name: e.target.value })}
-          required
-        />
-        <input
-          className='w-full p-2 border rounded mb-2 dark:bg-gray-500'
-          type="number"
-          value={editValues.price}
-          onChange={e => setEditValues({ ...editValues, price: e.target.value })}
-          required
-        />
-        <input
-          className='w-full p-2 border rounded mb-2 dark:bg-gray-500'
-          type="number"
-          value={editValues.discount}
-          onChange={e => setEditValues({ ...editValues, discount: e.target.value })}
-        />
-        <textarea
-          className='w-full p-2 border rounded mb-2 dark:bg-gray-500'
-          value={editValues.description}
-          onChange={e => setEditValues({
-            ...editValues,
-            description: e.target.value
-          })}
-          required
-          rows={4}
-        />
-        <input
-          className='w-full p-2 border rounded mb-2 dark:bg-gray-500'
-          type="text"
-          value={editValues.image}
-          onChange={e => setEditValues({ ...editValues, image: e.target.value })}
-          required
-        />
+        <label className=""> Product Name
+          <input
+            className='w-full p-2 border rounded mb-2 dark:bg-gray-500'
+            type="text"
+            value={editValues.name}
+            onChange={e => setEditValues({ ...editValues, name: e.target.value })}
+            required
+          />
+        </label>
+        <label className=""> Product Price <span className='text-blue-500 font-bold text-sm ml-5'> $ </span>
+          <input
+            className='w-full p-2 border rounded mb-2 dark:bg-gray-500'
+            type="number"
+            value={editValues.price}
+            onChange={e => setEditValues({ ...editValues, price: e.target.value })}
+            required
+          />
+        </label>
+        <label className=""> Product Discount <span className='text-blue-500 font-bold text-sm ml-5'> % </span>
+          <input
+            className='w-full p-2 border rounded mb-2 dark:bg-gray-500'
+            type="number"
+            value={editValues.discount}
+            onChange={e => setEditValues({ ...editValues, discount: e.target.value })}
+          />
+        </label>
+        <label className=""> Product Description
+          <textarea
+            className='w-full p-2 border rounded mb-2 dark:bg-gray-500'
+            value={editValues.description}
+            onChange={e => setEditValues({
+              ...editValues,
+              description: e.target.value
+            })}
+            required
+            rows={4}
+          />
+        </label>
+        <label className=""> Product Image URL
+          <input
+            className='w-full p-2 border rounded mb-2 dark:bg-gray-500'
+            type="text"
+            value={editValues.image}
+            onChange={e => setEditValues({ ...editValues, image: e.target.value })}
+            required
+          />
+        </label>
         <button
           type="submit"
           className='px-3 py-1 bg-green-500 text-white rounded mr-2'
