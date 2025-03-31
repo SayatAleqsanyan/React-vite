@@ -7,12 +7,10 @@ import Loading from "../../../components/ui/Loading.jsx";
 import Error from "../../../components/ui/Error.jsx";
 
 const Profile = () => {
-
   const { user_name } = useParams();
   const dispatch = useDispatch();
   const { users, status, error } = useSelector((state) => state.users);
   const user = users.find((user) => user.userName === user_name);
-
 
   useEffect(() => {
     if (status === 'idle') {

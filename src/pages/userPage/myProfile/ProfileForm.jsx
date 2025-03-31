@@ -153,6 +153,21 @@ const ProfileForm = ({ editValues, setEditValues, handleSubmit, handleCancel }) 
       <div className="flex justify-center">
         <ImagePreview imgURL={editValues.imgURL} />
       </div>
+      <div className="flex justify-center items-center">
+        <label className="flex items-center cursor-pointer group hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded-md transition-colors">
+          <input
+            type="checkbox"
+            id="verified"
+            name="verified"
+            checked={editValues.verified}
+            onClick={e => setEditValues({ ...editValues, verified: e.target.checked })}
+            className="w-5 h-5 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-2 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600 transition-colors"
+          />
+          <span className="ml-3 text-sm font-medium text-gray-800 dark:text-gray-200 group-hover:text-green-700 dark:group-hover:text-green-400 transition-colors">
+            Activate double protection
+          </span>
+        </label>
+      </div>
       <div className="flex justify-center">
         <button
           type="submit"

@@ -48,7 +48,8 @@ const EditMyProfile = () => {
         profession: user.profession || '',
         autobiography: user.autobiography || '',
         skills: user.skills || [],
-        imgURL: user.imgURL || ''
+        imgURL: user.imgURL || '',
+        verified: user.verified || false
       });
     }
   }, [user]);
@@ -77,7 +78,8 @@ const EditMyProfile = () => {
         profession: editValues.profession,
         autobiography: editValues.autobiography,
         skills: editValues.skills,
-        imgURL: editValues.imgURL
+        imgURL: editValues.imgURL,
+        verified: editValues.verified
       };
 
       await dispatch(updateUser({
