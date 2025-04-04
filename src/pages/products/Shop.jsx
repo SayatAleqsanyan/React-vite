@@ -70,10 +70,10 @@ const Shop = ({ modalActive, setModalActive }) => {
       if (successfulUpdates.length === shopProducts.length) {
         setModalActive(false);
       }
-      notify(`Products successfully added to cart!`, 'green');
+      notify(`The purchase was successful!`, 'green');
     } catch (error) {
-      console.error('Oops! Something went wrong while adding products.', error);
-      notify(`Oops! Something went wrong while adding products.`, 'red')
+      console.error('Oops! something went wrong during the purchase.', error);
+      notify(`Oops! something went wrong during the purchase.`, 'red')
     }
   };
 
@@ -101,7 +101,9 @@ const Shop = ({ modalActive, setModalActive }) => {
             </td>
           </tr>
           {shopProducts && shopProducts.length
-            ? shopProducts.map((product, index) => (<tr key={product.id} className='hover:bg-gray-200 dark:hover:bg-gray-600'><td className='py-2 px-4 border-b w-[5%]'>{index + 1}</td><td className='py-2 px-4 border-b w-[15%]'>
+            ? shopProducts.map((product, index) => (<tr key={product.id} className='hover:bg-gray-200 dark:hover:bg-gray-600'>
+              <td className='py-2 px-4 border-b w-[5%]'>{index + 1}</td>
+              <td className='py-2 px-4 border-b w-[15%]'>
                 <img
                   className="mx-auto object-cover max-w-full h-24"
                   src={product.image}
@@ -114,9 +116,17 @@ const Shop = ({ modalActive, setModalActive }) => {
                   price={product.price}
                 />
             </td>
+              {shopProducts.length <= 1
+                ? <tr><td colSpan="6" className="py-2 px-4 h-[420px]"></td></tr>
+                : shopProducts.length <= 2
+                  ? <tr><td colSpan="6" className="py-2 px-4 h-[210px]"></td></tr>
+                  : shopProducts.length <= 3
+                    ? <tr><td colSpan="6" className="py-2 px-4 h-[140px]"></td></tr>
+                    : <></>
+              }
             </tr>))
             :  <tr>
-              <td colSpan="6" className="py-2 px-4 h-[300px]">
+              <td colSpan="6" className="py-2 px-4 h-[420px]">
                 No Products
               </td>
           </tr>

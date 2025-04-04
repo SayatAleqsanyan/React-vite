@@ -87,10 +87,10 @@ const EditMyProfile = () => {
         updatedUser
       })).unwrap();
       navigate(-1);
-      notify(`User unblocked!`, 'green');
+      notify(`Your data has been successfully changed!`, 'green');
     } catch (error) {
-      console.error('Failed to update user:', error);
-      notify(`Failed to update user ${error}!`, 'red')
+      console.error('Failed to update your data:', error);
+      notify(`Failed to update your data ${error}!`, 'red')
     }
   };
 
