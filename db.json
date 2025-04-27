@@ -281,6 +281,10 @@
         {
           "user": "asfdasfafdsa",
           "quantity": 1
+        },
+        {
+          "user": "Admin",
+          "quantity": 1
         }
       ],
       "like": [
@@ -886,12 +890,6 @@
       "text": "xvccbbvcb",
       "date": "2025-03-27",
       "id": 13
-    },
-    {
-      "author": "TestName1",
-      "text": "dsfgasgdas",
-      "date": "2025-03-30",
-      "id": 14
     }
   ]
 }
